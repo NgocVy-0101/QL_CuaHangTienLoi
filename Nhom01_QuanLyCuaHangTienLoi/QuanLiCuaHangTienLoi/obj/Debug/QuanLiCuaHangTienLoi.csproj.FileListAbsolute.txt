@@ -1,0 +1,11 @@
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\bin\Debug\QuanLiCuaHangTienLoi.exe.config
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\bin\Debug\QuanLiCuaHangTienLoi.exe
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\bin\Debug\QuanLiCuaHangTienLoi.pdb
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.csproj.AssemblyReference.cache
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.Form1.resources
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.Form2.resources
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.Properties.Resources.resources
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.csproj.GenerateResource.cache
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.csproj.CoreCompileInputs.cache
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.exe
+C:\Users\janem\OneDrive\Desktop\dự án CN.net\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.pdb
