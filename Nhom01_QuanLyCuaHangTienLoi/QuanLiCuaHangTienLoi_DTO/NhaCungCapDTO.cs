@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QuanLiCuaHangTienLoi_DTO
+{
+    public class NhaCungCapDTO
+    {
+        string maNCC, tenNCC, diaChi;
+
+        public string MaNCC { get => maNCC; set => maNCC = value; }
+        public string TenNCC { get => tenNCC; set => tenNCC = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+
+        public NhaCungCapDTO(string m, string t, string dc)
+        {
+            MaNCC = m;
+            TenNCC = t;
+            DiaChi = dc;
+        }
+    }
+}
