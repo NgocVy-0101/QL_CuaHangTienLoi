@@ -42,7 +42,10 @@ namespace QuanLiCuaHangTienLoi_DAL
                 string mloai = i["MaLoaiSanPham"].ToString();
                 string mncc = i["MaNCC"].ToString();
                 string gi = i["GhiChu"].ToString();
-                SanPhamDTO o = new SanPhamDTO(ma,ten,sl,gn,gb,hi,mloai,mncc,gi);
+                DateTime nsx = (DateTime)i["NgaySanXuat"];
+                DateTime nhh = (DateTime)i["NgayHetHan"];
+                string xx = i["XuatXu"].ToString();
+                SanPhamDTO o = new SanPhamDTO(ma,ten,sl,gn,gb,hi,nsx,nhh,xx,mloai,mncc,gi);
                 k.Add(o);
             }
 

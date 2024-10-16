@@ -40,6 +40,9 @@ namespace QuanLiCuaHangTienLoi
             dgvSanPham.Columns["MaLoaiSanPham"].HeaderText = "Loại sản phẩm";
             dgvSanPham.Columns["MaNCC"].HeaderText = "Nhà cung cấp";
             dgvSanPham.Columns["GhiChu"].HeaderText = "Ghi chú";
+            dgvSanPham.Columns["NgaySanXuat"].HeaderText = "Ngày sản xuất";
+            dgvSanPham.Columns["NgayHetHan"].HeaderText = "Hạn sử dụng";
+            dgvSanPham.Columns["XuatXu"].HeaderText = "Xuất xứ";
         }
 
         private void frmQLSanPham_Load(object sender, EventArgs e)

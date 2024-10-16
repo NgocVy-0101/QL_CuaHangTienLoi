@@ -11,6 +11,8 @@ namespace QuanLiCuaHangTienLoi_DTO
         string maSanPham, tenSanPham, hinhAnh, maLoaiSanPham, maNCC, ghiChu;
         int soLuongCon;
         float giaNhap, giaBan;
+        DateTime ngaySanXuat, ngayHetHan;
+        string xuatXu;
 
         public string MaSanPham { get => maSanPham; set => maSanPham = value; }
         public string TenSanPham { get => tenSanPham; set => tenSanPham = value; }
@@ -21,8 +23,11 @@ namespace QuanLiCuaHangTienLoi_DTO
         public int SoLuongCon { get => soLuongCon; set => soLuongCon = value; }
         public float GiaNhap { get => giaNhap; set => giaNhap = value; }
         public float GiaBan { get => giaBan; set => giaBan = value; }
+        public DateTime NgaySanXuat { get => ngaySanXuat; set => ngaySanXuat = value; }
+        public DateTime NgayHetHan { get => ngayHetHan; set => ngayHetHan = value; }
+        public string XuatXu { get => xuatXu; set => xuatXu = value; }
 
-        public SanPhamDTO(string ma, string ten, int sl, float gn, float gb, string hi, string maloai, string mncc, string ghi)
+        public SanPhamDTO(string ma, string ten, int sl, float gn, float gb, string hi, DateTime nsx, DateTime nhh, string xx, string maloai, string mncc, string ghi)
         {
             MaSanPham = ma;
             TenSanPham = ten;
@@ -33,6 +38,9 @@ namespace QuanLiCuaHangTienLoi_DTO
             MaLoaiSanPham = maloai;
             MaNCC = mncc;
             GhiChu = ghi;
+            NgayHetHan = nhh;
+            NgaySanXuat = nsx;
+            XuatXu = xx;
         }
     }
 }
