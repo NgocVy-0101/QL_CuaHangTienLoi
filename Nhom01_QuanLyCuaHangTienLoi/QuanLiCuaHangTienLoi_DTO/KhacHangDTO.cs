@@ -9,12 +9,31 @@ namespace QuanLiCuaHangTienLoi_DTO
     public class KhacHangDTO
     {
         string maKhach, tenKhach, dienThoai;
+
+        public string DienThoai
+        {
+            get { return dienThoai; }
+            set { dienThoai = value; }
+        }
+
+        public string TenKhach
+        {
+            get { return tenKhach; }
+            set { tenKhach = value; }
+        }
+
+        public string MaKhach
+        {
+            get { return maKhach; }
+            set { maKhach = value; }
+        }
         int diem;
 
-        public string MaKhach { get => maKhach; set => maKhach = value; }
-        public string TenKhach { get => tenKhach; set => tenKhach = value; }
-        public string DienThoai { get => dienThoai; set => dienThoai = value; }
-        public int Diem { get => diem; set => diem = value; }
+        public int Diem
+        {
+            get { return diem; }
+            set { diem = value; }
+        }
 
         public KhacHangDTO(string m, string t, string d, int di)
         {

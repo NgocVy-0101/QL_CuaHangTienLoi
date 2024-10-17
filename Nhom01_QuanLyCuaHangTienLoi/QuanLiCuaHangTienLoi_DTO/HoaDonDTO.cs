@@ -9,19 +9,57 @@ namespace QuanLiCuaHangTienLoi_DTO
     public class HoaDonDTO
     {
         string maHoaDon, maNhanVien, maKhach, maSanPham;
+
+        public string MaSanPham
+        {
+            get { return maSanPham; }
+            set { maSanPham = value; }
+        }
+
+        public string MaKhach
+        {
+            get { return maKhach; }
+            set { maKhach = value; }
+        }
+
+        public string MaNhanVien
+        {
+            get { return maNhanVien; }
+            set { maNhanVien = value; }
+        }
+
+        public string MaHoaDon
+        {
+            get { return maHoaDon; }
+            set { maHoaDon = value; }
+        }
         int soLuong;
+
+        public int SoLuong
+        {
+            get { return soLuong; }
+            set { soLuong = value; }
+        }
         DateTime ngayBan;
+
+        public DateTime NgayBan
+        {
+            get { return ngayBan; }
+            set { ngayBan = value; }
+        }
         float thanhTien, tongTien;
 
-        public string MaHoaDon { get => maHoaDon; set => maHoaDon = value; }
-        public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
-        public string MaKhach { get => maKhach; set => maKhach = value; }
-        public string MaSanPham { get => maSanPham; set => maSanPham = value; }
-        public int SoLuong { get => soLuong; set => soLuong = value; }
-        public DateTime NgayBan { get => ngayBan; set => ngayBan = value; }
-        public float ThanhTien { get => thanhTien; set => thanhTien = value; }
-        public float TongTien { get => tongTien; set => tongTien = value; }
+        public float TongTien
+        {
+            get { return tongTien; }
+            set { tongTien = value; }
+        }
 
+        public float ThanhTien
+        {
+            get { return thanhTien; }
+            set { thanhTien = value; }
+        }
         public HoaDonDTO(string mhd, string mnv, string mk, string msp, int sl, DateTime nb, float tt, float tong)
         {
             MaHoaDon = mhd;

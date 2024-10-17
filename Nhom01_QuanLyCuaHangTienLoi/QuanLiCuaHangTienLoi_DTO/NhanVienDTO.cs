@@ -9,15 +9,49 @@ namespace QuanLiCuaHangTienLoi_DTO
     public class NhanVienDTO
     {
         string maNhanVien, tenNhanVien, gioiTinh, dienThoai, diaChi, matKhau;
+
+        public string MatKhau
+        {
+            get { return matKhau; }
+            set { matKhau = value; }
+        }
+
+        public string DiaChi
+        {
+            get { return diaChi; }
+            set { diaChi = value; }
+        }
+
+        public string DienThoai
+        {
+            get { return dienThoai; }
+            set { dienThoai = value; }
+        }
+
+        public string GioiTinh
+        {
+            get { return gioiTinh; }
+            set { gioiTinh = value; }
+        }
+
+        public string TenNhanVien
+        {
+            get { return tenNhanVien; }
+            set { tenNhanVien = value; }
+        }
+
+        public string MaNhanVien
+        {
+            get { return maNhanVien; }
+            set { maNhanVien = value; }
+        }
         DateTime ngaySinh;
 
-        public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
-        public string TenNhanVien { get => tenNhanVien; set => tenNhanVien = value; }
-        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
-        public string DienThoai { get => dienThoai; set => dienThoai = value; }
-        public string DiaChi { get => diaChi; set => diaChi = value; }
-        public string MatKhau { get => matKhau; set => matKhau = value; }
-        public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
+        public DateTime NgaySinh
+        {
+            get { return ngaySinh; }
+            set { ngaySinh = value; }
+        }
 
         public NhanVienDTO(string m, string t, string gt, DateTime ns, string dt, string dc, string mk)
         {

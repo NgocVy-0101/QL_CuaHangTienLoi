@@ -10,8 +10,17 @@ namespace QuanLiCuaHangTienLoi_DTO
     {
         string maLoaiSanPham, tenLoaiSanPham;
 
-        public string MaLoaiSanPham { get => maLoaiSanPham; set => maLoaiSanPham = value; }
-        public string TenLoaiSanPham { get => tenLoaiSanPham; set => tenLoaiSanPham = value; }
+        public string TenLoaiSanPham
+        {
+            get { return tenLoaiSanPham; }
+            set { tenLoaiSanPham = value; }
+        }
+
+        public string MaLoaiSanPham
+        {
+            get { return maLoaiSanPham; }
+            set { maLoaiSanPham = value; }
+        }
 
         public LoaiSanPhamDTO(string m,string t)
         {
