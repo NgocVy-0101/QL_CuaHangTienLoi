@@ -35,12 +35,13 @@ namespace QuanLiCuaHangTienLoi_DTO
             set { diem = value; }
         }
 
-        public KhacHangDTO(string m, string t, string d, int di)
+        public KhachHangDTO(string m, string t, string d, int di)
         {
             MaKhach = m;
             TenKhach = t;
             DienThoai = d;
             Diem = di;
         }
+    }
     }
 }
