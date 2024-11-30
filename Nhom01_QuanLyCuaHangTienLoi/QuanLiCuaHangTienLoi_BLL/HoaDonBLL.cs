@@ -15,5 +15,13 @@ namespace QuanLiCuaHangTienLoi_BLL
         {
             return hd.HoaDon();
         }
+        public string MaHoaDon()
+        {
+            return hd.MaHoaDon();
+        }
+        public void Them(HoaDonDTO h)
+        {
+            hd.Them(h);
+        }
     }
 }

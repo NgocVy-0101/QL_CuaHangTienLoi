@@ -8,13 +8,7 @@ namespace QuanLiCuaHangTienLoi_DTO
 {
     public class HoaDonDTO
     {
-        string maHoaDon, maNhanVien, maKhach, maSanPham;
-
-        public string MaSanPham
-        {
-            get { return maSanPham; }
-            set { maSanPham = value; }
-        }
+        string maHoaDon, maNhanVien, maKhach;
 
         public string MaKhach
         {
@@ -33,12 +27,12 @@ namespace QuanLiCuaHangTienLoi_DTO
             get { return maHoaDon; }
             set { maHoaDon = value; }
         }
-        int soLuong;
+        float giamGia;
 
-        public int SoLuong
+        public float GiamGia
         {
-            get { return soLuong; }
-            set { soLuong = value; }
+            get { return giamGia; }
+            set { giamGia = value; }
         }
         DateTime ngayBan;
 
@@ -47,28 +41,20 @@ namespace QuanLiCuaHangTienLoi_DTO
             get { return ngayBan; }
             set { ngayBan = value; }
         }
-        float thanhTien, tongTien;
+        float tongTien;
 
         public float TongTien
         {
             get { return tongTien; }
             set { tongTien = value; }
         }
-
-        public float ThanhTien
-        {
-            get { return thanhTien; }
-            set { thanhTien = value; }
-        }
-        public HoaDonDTO(string mhd, string mnv, string mk, string msp, int sl, DateTime nb, float tt, float tong)
+        public HoaDonDTO(string mhd, string mnv, string mk, float sl, DateTime nb,  float tong)
         {
             MaHoaDon = mhd;
             MaNhanVien = mnv;
             MaKhach = mk;
-            MaSanPham = msp;
-            SoLuong = sl;
+            GiamGia = sl;
             NgayBan = nb;
-            ThanhTien = tt;
             TongTien = tong;
         }
     }

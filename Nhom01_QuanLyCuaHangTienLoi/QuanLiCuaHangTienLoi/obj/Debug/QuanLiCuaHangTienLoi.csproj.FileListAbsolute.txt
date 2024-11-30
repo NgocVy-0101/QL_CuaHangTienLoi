@@ -39,3 +39,4 @@ D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHang
 D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.frmQLNhaCungCap.resources
 D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.frmMain.resources
 D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.csproj.CopyComplete
+D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\obj\Debug\QuanLiCuaHangTienLoi.frmTaoHoaDon.resources
