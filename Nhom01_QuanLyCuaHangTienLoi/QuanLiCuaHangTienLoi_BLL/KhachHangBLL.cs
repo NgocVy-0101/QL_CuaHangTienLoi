@@ -10,10 +10,25 @@ namespace QuanLiCuaHangTienLoi_BLL
 {
     public class KhachHangBLL
     {
-        KhachHangDAL kh = new KhachHangDAL();
-        public List<KhacHangDTO> KhachHang()
+        KhachHangDAL dal = new KhachHangDAL();
+        public List<KhachHangDTO> KhachHang()
         {
-            return kh.KhachHang();
+            return dal.KhachHang();
+        }
+
+        public bool ThemKhachHang(KhachHangDTO kh)
+        {
+            return dal.ThemKhachHang(kh);
+        }
+
+        public bool CapNhatKhachHang(KhachHangDTO kh)
+        {
+            return dal.CapNhatKhachHang(kh);
+        }
+
+        public bool XoaKhachHang(string maKhach)
+        {
+            return dal.XoaKhachHang(maKhach);
         }
     }
 }
