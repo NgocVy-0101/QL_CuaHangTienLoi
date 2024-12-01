@@ -12,28 +12,10 @@ namespace QuanLiCuaHangTienLoi_DTO
         DateTime ngaySanXuat, ngayHetHan;
         string xuatXu;
 
-        public string GhiChu
+        public string MaSanPham
         {
-            get { return ghiChu; }
-            set { ghiChu = value; }
-        }
-
-        public string MaNCC
-        {
-            get { return maNCC; }
-            set { maNCC = value; }
-        }
-
-        public string MaLoaiSanPham
-        {
-            get { return maLoaiSanPham; }
-            set { maLoaiSanPham = value; }
-        }
-
-        public string HinhAnh
-        {
-            get { return hinhAnh; }
-            set { hinhAnh = value; }
+            get { return maSanPham; }
+            set { maSanPham = value; }
         }
 
         public string TenSanPham
@@ -42,11 +24,6 @@ namespace QuanLiCuaHangTienLoi_DTO
             set { tenSanPham = value; }
         }
 
-        public string MaSanPham
-        {
-            get { return maSanPham; }
-            set { maSanPham = value; }
-        }
         int soLuongCon;
 
         public int SoLuongCon
@@ -67,6 +44,20 @@ namespace QuanLiCuaHangTienLoi_DTO
             get { return giaNhap; }
             set { giaNhap = value; }
         }
+        public string MaNCC
+        {
+            get { return maNCC; }
+            set { maNCC = value; }
+        }
+
+        public string MaLoaiSanPham
+        {
+            get { return maLoaiSanPham; }
+            set { maLoaiSanPham = value; }
+        }
+
+
+
 
         public DateTime NgaySanXuat 
         {
@@ -83,6 +74,18 @@ namespace QuanLiCuaHangTienLoi_DTO
             get { return xuatXu; }
             set { xuatXu = value; }
         }
+
+        public string GhiChu
+        {
+            get { return ghiChu; }
+            set { ghiChu = value; }
+        }
+        public string HinhAnh
+        {
+            get { return hinhAnh; }
+            set { hinhAnh = value; }
+        }
+
 
         public SanPhamDTO(string ma, string ten, int sl, float gn, float gb, string hi, DateTime nsx, DateTime nhh, string xx, string maloai, string mncc, string ghi)
         {

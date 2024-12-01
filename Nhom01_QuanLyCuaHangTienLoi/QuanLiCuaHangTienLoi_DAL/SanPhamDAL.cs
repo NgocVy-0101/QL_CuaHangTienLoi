@@ -51,7 +51,66 @@ namespace QuanLiCuaHangTienLoi_DAL
 
             return k;
         }
+        public bool Them(SanPhamDTO sp)
+        {
+            DataRow dr = ds.Tables[0].Rows.Find(sp.MaSanPham);
+            if (dr != null)
+                return false;
 
-       
+            DataRow n = ds.Tables[0].NewRow();
+            n["MaSanPham"] = sp.MaSanPham;
+            n["TenSanPham"] = sp.TenSanPham;
+            n["SoLuongCon"] = sp.SoLuongCon;
+            n["GiaNhap"] = sp.GiaNhap;
+            n["GiaBan"] = sp.GiaBan;
+            n["HinhAnh"] = sp.HinhAnh;
+            n["NgaySanXuat"] = sp.NgaySanXuat;
+            n["NgayHetHan"] = sp.NgayHetHan;
+            n["XuatXu"] = sp.XuatXu;
+            n["MaLoaiSanPham"] = sp.MaLoaiSanPham;
+            n["MaNCC"] = sp.MaNCC;
+            n["GhiChu"] = sp.GhiChu;
+
+            ds.Tables[0].Rows.Add(n);//Them dong vua roi vao dataset
+
+            SqlCommandBuilder cb = new SqlCommandBuilder(adap);
+            adap.Update(ds.Tables[0]);//Luu lại xuống database
+            return true;
+        }
+        public bool Sua(SanPhamDTO sp)
+        {
+            DataRow n = ds.Tables[0].Rows.Find(sp.MaSanPham);
+            if (n == null)
+                return false;
+
+            n["TenSanPham"] = sp.TenSanPham;
+            n["SoLuongCon"] = sp.SoLuongCon;
+            n["GiaNhap"] = sp.GiaNhap;
+            n["GiaBan"] = sp.GiaBan;
+            n["HinhAnh"] = sp.HinhAnh;
+            n["NgaySanXuat"] = sp.NgaySanXuat;
+            n["NgayHetHan"] = sp.NgayHetHan;
+            n["XuatXu"] = sp.XuatXu;
+            n["MaLoaiSanPham"] = sp.MaLoaiSanPham;
+            n["MaNCC"] = sp.MaNCC;
+            n["GhiChu"] = sp.GhiChu;
+
+            SqlCommandBuilder c = new SqlCommandBuilder(adap);
+            adap.Update(ds.Tables[0]);
+            return true;
+        }
+        public bool Xoa(SanPhamDTO sp)
+        {
+            DataRow d = ds.Tables[0].Rows.Find(sp.MaSanPham);
+            if (d == null)
+                return false;
+
+            d.Delete();
+
+            SqlCommandBuilder c = new SqlCommandBuilder(adap);
+            adap.Update(ds.Tables[0]);
+            return true;
+        }
+
     }
 }

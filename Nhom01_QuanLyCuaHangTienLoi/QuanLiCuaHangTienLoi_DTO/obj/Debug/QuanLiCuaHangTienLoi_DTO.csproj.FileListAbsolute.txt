@@ -4,3 +4,9 @@ D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHang
 D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.csproj.CoreCompileInputs.cache
 D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.dll
 D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.pdb
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\bin\Debug\QuanLiCuaHangTienLoi_DTO.dll
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\bin\Debug\QuanLiCuaHangTienLoi_DTO.pdb
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.csproj.AssemblyReference.cache
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.csproj.CoreCompileInputs.cache
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.dll
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.pdb

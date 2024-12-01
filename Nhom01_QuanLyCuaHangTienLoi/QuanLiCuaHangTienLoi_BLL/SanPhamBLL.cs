@@ -15,6 +15,17 @@ namespace QuanLiCuaHangTienLoi_BLL
         {
             return sp.SanPham();
         }
-      
+        public bool Them(SanPhamDTO s)
+        {
+            return sp.Them(s);
+        }
+        public bool Sua(SanPhamDTO s)
+        {
+            return sp.Sua(s);
+        }
+        public bool Xoa(SanPhamDTO s)
+        {
+            return sp.Xoa(s);
+        }
     }
 }

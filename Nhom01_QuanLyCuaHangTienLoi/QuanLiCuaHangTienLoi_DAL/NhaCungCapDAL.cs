@@ -42,5 +42,47 @@ namespace QuanLiCuaHangTienLoi_DAL
 
             return k;
         }
+        public bool Them(NhaCungCapDTO sp)
+        {
+            DataRow dr = ds.Tables[0].Rows.Find(sp.MaNCC);
+            if (dr != null)
+                return false;
+
+            DataRow d = ds.Tables[0].NewRow();
+            d[0] = sp.MaNCC;
+            d[1] = sp.TenNCC;
+            d[2] = sp.DiaChi;
+
+            ds.Tables[0].Rows.Add(d);
+
+            SqlCommandBuilder c = new SqlCommandBuilder(adap);
+            adap.Update(ds.Tables[0]);
+            return true;
+        }
+        public bool Sua(NhaCungCapDTO sp)
+        {
+            DataRow d = ds.Tables[0].Rows.Find(sp.MaNCC);
+            if (d == null)
+                return false;
+
+            d[1] = sp.TenNCC;
+            d[2] = sp.DiaChi;
+
+            SqlCommandBuilder c = new SqlCommandBuilder(adap);
+            adap.Update(ds.Tables[0]);
+            return true;
+        }
+        public bool Xoa(NhaCungCapDTO sp)
+        {
+            DataRow d = ds.Tables[0].Rows.Find(sp.MaNCC);
+            if (d == null)
+                return false;
+
+            d.Delete();
+
+            SqlCommandBuilder c = new SqlCommandBuilder(adap);
+            adap.Update(ds.Tables[0]);
+            return true;
+        }
     }
 }

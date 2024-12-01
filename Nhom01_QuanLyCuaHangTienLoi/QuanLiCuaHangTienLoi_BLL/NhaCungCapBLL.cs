@@ -15,5 +15,17 @@ namespace QuanLiCuaHangTienLoi_BLL
         {
             return ncc.NhaCungCap();
         }
+        public bool Them(NhaCungCapDTO sp)
+        {
+            return ncc.Them(sp);
+        }
+        public bool Sua(NhaCungCapDTO sp)
+        {
+            return ncc.Sua(sp);
+        }
+        public bool Xoa(NhaCungCapDTO sp)
+        {
+            return ncc.Xoa(sp);
+        }
     }
 }

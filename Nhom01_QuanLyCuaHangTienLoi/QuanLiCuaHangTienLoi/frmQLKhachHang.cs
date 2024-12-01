@@ -23,7 +23,7 @@ namespace QuanLiCuaHangTienLoi
 
         public void LoadKH()
         {
-            List<KhacHangDTO> ds = new List<KhacHangDTO>();
+            List<KhachHangDTO> ds = new List<KhachHangDTO>();
             ds = kh.KhachHang();
             dgvKhachHang.DataSource = ds;
             // Đổi tên các cột theo ý muốn sau khi đã gán dữ liệu
@@ -36,6 +36,16 @@ namespace QuanLiCuaHangTienLoi
         private void frmQLKhachHang_Load(object sender, EventArgs e)
         {
             LoadKH();
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_AddNew_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLiCuaHangTienLoi_DTO
 {
-    public class KhacHangDTO
+    public class KhachHangDTO
     {
         string maKhach, tenKhach, dienThoai;
 
@@ -42,6 +42,6 @@ namespace QuanLiCuaHangTienLoi_DTO
             DienThoai = d;
             Diem = di;
         }
-    }
+    
     }
 }
