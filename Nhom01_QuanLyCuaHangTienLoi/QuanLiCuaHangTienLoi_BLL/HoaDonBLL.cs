@@ -23,5 +23,9 @@ namespace QuanLiCuaHangTienLoi_BLL
         {
             hd.Them(h);
         }
+        public float GiamGia(string ma)
+        {
+            return hd.GiamGia(ma);
+        }
     }
 }

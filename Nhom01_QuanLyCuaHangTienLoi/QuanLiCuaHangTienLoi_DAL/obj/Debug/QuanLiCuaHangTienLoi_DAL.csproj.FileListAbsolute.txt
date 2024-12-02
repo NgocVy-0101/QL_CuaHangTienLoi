@@ -7,12 +7,12 @@ D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHang
 D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.CopyComplete
 D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.dll
 D:\HOCTAP\CongNgheNet\DoAn\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.pdb
-D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.AssemblyReference.cache
-D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.CoreCompileInputs.cache
-D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.dll
-D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.pdb
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\bin\Debug\QuanLiCuaHangTienLoi_DAL.dll
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\bin\Debug\QuanLiCuaHangTienLoi_DAL.pdb
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\bin\Debug\QuanLiCuaHangTienLoi_DTO.dll
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\bin\Debug\QuanLiCuaHangTienLoi_DTO.pdb
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.AssemblyReference.cache
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.CoreCompileInputs.cache
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.CopyComplete
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.dll
+D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.pdb

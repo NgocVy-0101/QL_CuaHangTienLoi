@@ -16,7 +16,7 @@ namespace QuanLiCuaHangTienLoi_DAL
         SqlDataAdapter adap;
         public NhaCungCapDAL()
         {
-            string s = @"Data Source=LAPTOP-SF87IO3T\PHAMVU;Initial Catalog=QLCHTL;Integrated Security=True";
+            string s = KetNoi.conn;
             conn = new SqlConnection(s);
         }
         public List<NhaCungCapDTO> NhaCungCap()
@@ -83,6 +83,27 @@ namespace QuanLiCuaHangTienLoi_DAL
             SqlCommandBuilder c = new SqlCommandBuilder(adap);
             adap.Update(ds.Tables[0]);
             return true;
+        }
+        public string MaNCC()
+        {
+            string ma = "";
+
+            var HD = ds.Tables[0].AsEnumerable()
+                .Where(row => row[0].ToString().StartsWith("NCC"))
+                .Select(row => row[0].ToString())
+                .ToList();
+
+            int invoiceNumber = 1;
+            if (HD.Count > 0)
+            {
+                var lastInvoice = HD.Max();
+                var lastNumber = int.Parse(lastInvoice.Substring(lastInvoice.Length - 3));
+                invoiceNumber = lastNumber + 1;
+            }
+
+            ma = "NCC" + invoiceNumber.ToString("D3");
+
+            return ma;
         }
     }
 }

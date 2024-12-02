@@ -58,6 +58,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLSanPham.Designer.cs">
+      <DependentUpon>frmQLSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,12 +87,6 @@
     </Compile>
     <Compile Include="frmQLLoaiSanPham.Designer.cs">
       <DependentUpon>frmQLLoaiSanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmQLSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQLSanPham.Designer.cs">
-      <DependentUpon>frmQLSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQLKhachHang.cs">
       <SubType>Form</SubType>
@@ -126,6 +126,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLSanPham.resx">
+      <DependentUpon>frmQLSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLLoaiSanPham.resx">
       <DependentUpon>frmQLLoaiSanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQLSanPham.resx">
-      <DependentUpon>frmQLSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLKhachHang.resx">
       <DependentUpon>frmQLKhachHang.cs</DependentUpon>
@@ -169,6 +172,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

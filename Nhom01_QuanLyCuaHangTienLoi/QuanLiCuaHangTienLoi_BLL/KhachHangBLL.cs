@@ -30,5 +30,13 @@ namespace QuanLiCuaHangTienLoi_BLL
         {
             return dal.XoaKhachHang(maKhach);
         }
+        public void TichDiem(string ma,int x)
+        {
+            dal.TichDiem(ma,x);
+        }
+        public string MaKH()
+        {
+            return dal.MaKH();
+        }
     }
 }

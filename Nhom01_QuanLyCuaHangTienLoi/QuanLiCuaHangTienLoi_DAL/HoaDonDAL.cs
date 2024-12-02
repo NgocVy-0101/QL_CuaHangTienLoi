@@ -16,7 +16,7 @@ namespace QuanLiCuaHangTienLoi_DAL
         SqlDataAdapter adap;
         public HoaDonDAL()
         {
-            string s = @"Data Source=LAPTOP-SF87IO3T\PHAMVU;Initial Catalog=QLCHTL;Integrated Security=True";
+            string s = KetNoi.conn;
             conn = new SqlConnection(s);
         }
         public List<HoaDonDTO> HoaDon()
@@ -96,5 +96,20 @@ namespace QuanLiCuaHangTienLoi_DAL
             SqlCommandBuilder c = new SqlCommandBuilder(adap);
             adap.Update(ds.Tables[0]);
         }
+        
+        public float GiamGia(string ma)
+        {
+            string q = "select Diem from KhachHang where KhachHang.MaKhach='" + ma + "'";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(q, conn);
+            int diem = (int)cmd.ExecuteScalar();
+            conn.Close();
+            if (diem < 50)
+                return 0;
+            else
+                return (float)0.1;
+        }
+
+
     }
 }

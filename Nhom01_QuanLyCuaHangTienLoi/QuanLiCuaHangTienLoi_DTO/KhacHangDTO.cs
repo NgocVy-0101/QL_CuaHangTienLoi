@@ -10,10 +10,10 @@ namespace QuanLiCuaHangTienLoi_DTO
     {
         string maKhach, tenKhach, dienThoai;
 
-        public string DienThoai
+        public string MaKhach
         {
-            get { return dienThoai; }
-            set { dienThoai = value; }
+            get { return maKhach; }
+            set { maKhach = value; }
         }
 
         public string TenKhach
@@ -22,11 +22,12 @@ namespace QuanLiCuaHangTienLoi_DTO
             set { tenKhach = value; }
         }
 
-        public string MaKhach
+        public string DienThoai
         {
-            get { return maKhach; }
-            set { maKhach = value; }
+            get { return dienThoai; }
+            set { dienThoai = value; }
         }
+
         int diem;
 
         public int Diem

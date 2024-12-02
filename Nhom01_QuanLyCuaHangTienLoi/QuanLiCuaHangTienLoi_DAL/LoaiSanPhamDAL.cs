@@ -16,7 +16,7 @@ namespace QuanLiCuaHangTienLoi_DAL
         SqlDataAdapter adap;
         public LoaiSanPhamDAL()
         {
-            string s = @"Data Source=LAPTOP-SF87IO3T\PHAMVU;Initial Catalog=QLCHTL;Integrated Security=True";
+            string s = KetNoi.conn;
             conn = new SqlConnection(s);
         }
         public List<LoaiSanPhamDTO> LoaiSP()
@@ -80,6 +80,27 @@ namespace QuanLiCuaHangTienLoi_DAL
             SqlCommandBuilder c = new SqlCommandBuilder(adap);
             adap.Update(ds.Tables[0]);
             return true;
+        }
+        public string MaLSP()
+        {
+            string ma = "";
+
+            var HD = ds.Tables[0].AsEnumerable()
+                .Where(row => row[0].ToString().StartsWith("LSP"))
+                .Select(row => row[0].ToString())
+                .ToList();
+
+            int invoiceNumber = 1;
+            if (HD.Count > 0)
+            {
+                var lastInvoice = HD.Max();
+                var lastNumber = int.Parse(lastInvoice.Substring(lastInvoice.Length - 3));
+                invoiceNumber = lastNumber + 1;
+            }
+
+            ma = "LSP" + invoiceNumber.ToString("D3");
+
+            return ma;
         }
     }
 }

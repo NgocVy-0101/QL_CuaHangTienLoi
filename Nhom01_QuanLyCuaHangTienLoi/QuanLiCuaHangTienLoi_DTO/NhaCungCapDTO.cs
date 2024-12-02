@@ -10,10 +10,10 @@ namespace QuanLiCuaHangTienLoi_DTO
     {
         string maNCC, tenNCC, diaChi;
 
-        public string DiaChi
+        public string MaNCC
         {
-            get { return diaChi; }
-            set { diaChi = value; }
+            get { return maNCC; }
+            set { maNCC = value; }
         }
 
         public string TenNCC
@@ -22,11 +22,12 @@ namespace QuanLiCuaHangTienLoi_DTO
             set { tenNCC = value; }
         }
 
-        public string MaNCC
+        public string DiaChi
         {
-            get { return maNCC; }
-            set { maNCC = value; }
+            get { return diaChi; }
+            set { diaChi = value; }
         }
+
 
         public NhaCungCapDTO(string m, string t, string dc)
         {

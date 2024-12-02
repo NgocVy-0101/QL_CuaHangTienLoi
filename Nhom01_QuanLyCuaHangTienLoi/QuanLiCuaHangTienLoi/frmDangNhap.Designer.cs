@@ -96,7 +96,7 @@ namespace QuanLiCuaHangTienLoi
             this.txt_MatKhau.Size = new System.Drawing.Size(308, 34);
             this.txt_MatKhau.TabIndex = 5;
             // 
-            // Form1
+            // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,8 +109,9 @@ namespace QuanLiCuaHangTienLoi
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_DangNhap);
             this.DoubleBuffered = true;
-            this.Name = "Form1";
+            this.Name = "frmDangNhap";
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

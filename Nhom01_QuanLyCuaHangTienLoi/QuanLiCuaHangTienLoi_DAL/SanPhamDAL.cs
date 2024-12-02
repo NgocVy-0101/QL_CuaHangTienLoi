@@ -16,7 +16,7 @@ namespace QuanLiCuaHangTienLoi_DAL
         SqlDataAdapter adap;
         public SanPhamDAL()
         {
-            string s = @"Data Source=LAPTOP-SF87IO3T\PHAMVU;Initial Catalog=QLCHTL;Integrated Security=True";
+            string s = KetNoi.conn;
             conn = new SqlConnection(s);
         }
         public List<SanPhamDTO> SanPham()
@@ -38,14 +38,13 @@ namespace QuanLiCuaHangTienLoi_DAL
                 int sl = (int)i["SoLuongCon"];
                 float gn = Convert.ToSingle(i["GiaNhap"]);
                 float gb = Convert.ToSingle(i["GiaBan"]);
-                string hi = i["HinhAnh"].ToString();
                 string mloai = i["MaLoaiSanPham"].ToString();
                 string mncc = i["MaNCC"].ToString();
                 string gi = i["GhiChu"].ToString();
                 DateTime nsx = (DateTime)i["NgaySanXuat"];
                 DateTime nhh = (DateTime)i["NgayHetHan"];
                 string xx = i["XuatXu"].ToString();
-                SanPhamDTO o = new SanPhamDTO(ma,ten,sl,gn,gb,hi,nsx,nhh,xx,mloai,mncc,gi);
+                SanPhamDTO o = new SanPhamDTO(ma,ten,sl,gn,gb,nsx,nhh,xx,mloai,mncc,gi);
                 k.Add(o);
             }
 
@@ -63,7 +62,6 @@ namespace QuanLiCuaHangTienLoi_DAL
             n["SoLuongCon"] = sp.SoLuongCon;
             n["GiaNhap"] = sp.GiaNhap;
             n["GiaBan"] = sp.GiaBan;
-            n["HinhAnh"] = sp.HinhAnh;
             n["NgaySanXuat"] = sp.NgaySanXuat;
             n["NgayHetHan"] = sp.NgayHetHan;
             n["XuatXu"] = sp.XuatXu;
@@ -87,7 +85,6 @@ namespace QuanLiCuaHangTienLoi_DAL
             n["SoLuongCon"] = sp.SoLuongCon;
             n["GiaNhap"] = sp.GiaNhap;
             n["GiaBan"] = sp.GiaBan;
-            n["HinhAnh"] = sp.HinhAnh;
             n["NgaySanXuat"] = sp.NgaySanXuat;
             n["NgayHetHan"] = sp.NgayHetHan;
             n["XuatXu"] = sp.XuatXu;
@@ -110,6 +107,39 @@ namespace QuanLiCuaHangTienLoi_DAL
             SqlCommandBuilder c = new SqlCommandBuilder(adap);
             adap.Update(ds.Tables[0]);
             return true;
+        }
+
+        public void CapNhatSoLuong(string ma, int sl)
+        {
+            DataRow d = ds.Tables[0].Rows.Find(ma);
+            if (d != null)
+            {
+                d["SoLuongCon"] = sl;
+            }
+            SqlCommandBuilder c = new SqlCommandBuilder(adap);
+            adap.Update(ds.Tables[0]);
+        }
+
+        public string MaSP()
+        {
+            string ma = "";
+
+            var HD = ds.Tables[0].AsEnumerable()
+                .Where(row => row[0].ToString().StartsWith("SP"))
+                .Select(row => row[0].ToString())
+                .ToList();
+
+            int invoiceNumber = 1;
+            if (HD.Count > 0)
+            {
+                var lastInvoice = HD.Max();
+                var lastNumber = int.Parse(lastInvoice.Substring(lastInvoice.Length - 3));
+                invoiceNumber = lastNumber + 1;
+            }
+
+            ma = "SP" + invoiceNumber.ToString("D3");
+
+            return ma;
         }
 
     }

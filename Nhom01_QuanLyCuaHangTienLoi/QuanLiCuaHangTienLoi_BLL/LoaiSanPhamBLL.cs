@@ -27,5 +27,9 @@ namespace QuanLiCuaHangTienLoi_BLL
         { 
             return l.Xoa(sp);
         }
+        public string MaLSP()
+        {
+            return l.MaLSP();
+        }
     }
 }

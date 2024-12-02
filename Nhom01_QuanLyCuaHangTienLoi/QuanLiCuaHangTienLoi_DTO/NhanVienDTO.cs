@@ -8,13 +8,26 @@ namespace QuanLiCuaHangTienLoi_DTO
 {
     public class NhanVienDTO
     {
-        string maNhanVien, tenNhanVien, gioiTinh, dienThoai, diaChi, matKhau;
+        string maNhanVien, tenNhanVien, gioiTinh, dienThoai, diaChi, matKhau, quyen;
 
-        public string MatKhau
+        public string MaNhanVien
         {
-            get { return matKhau; }
-            set { matKhau = value; }
+            get { return maNhanVien; }
+            set { maNhanVien = value; }
         }
+
+        public string TenNhanVien
+        {
+            get { return tenNhanVien; }
+            set { tenNhanVien = value; }
+        }
+
+        public string GioiTinh
+        {
+            get { return gioiTinh; }
+            set { gioiTinh = value; }
+        }
+
 
         public string DiaChi
         {
@@ -28,23 +41,7 @@ namespace QuanLiCuaHangTienLoi_DTO
             set { dienThoai = value; }
         }
 
-        public string GioiTinh
-        {
-            get { return gioiTinh; }
-            set { gioiTinh = value; }
-        }
 
-        public string TenNhanVien
-        {
-            get { return tenNhanVien; }
-            set { tenNhanVien = value; }
-        }
-
-        public string MaNhanVien
-        {
-            get { return maNhanVien; }
-            set { maNhanVien = value; }
-        }
         DateTime ngaySinh;
 
         public DateTime NgaySinh
@@ -53,7 +50,21 @@ namespace QuanLiCuaHangTienLoi_DTO
             set { ngaySinh = value; }
         }
 
-        public NhanVienDTO(string m, string t, string gt, DateTime ns, string dt, string dc, string mk)
+
+        public string MatKhau
+        {
+            get { return matKhau; }
+            set { matKhau = value; }
+        }
+
+        public string Quyen
+        {
+            get { return quyen; }
+            set { quyen = value; }
+        }
+
+
+        public NhanVienDTO(string m, string t, string gt, DateTime ns, string dt, string dc, string mk, string q)
         {
             MaNhanVien = m;
             TenNhanVien = t;
@@ -62,6 +73,7 @@ namespace QuanLiCuaHangTienLoi_DTO
             DienThoai = dt;
             DiaChi = dc;
             MatKhau = mk;
+            Quyen = q;
         }
     }
 }

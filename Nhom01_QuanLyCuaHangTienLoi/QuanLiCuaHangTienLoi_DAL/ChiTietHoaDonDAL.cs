@@ -16,7 +16,7 @@ namespace QuanLiCuaHangTienLoi_DAL
         SqlDataAdapter adap;
         public ChiTietHoaDonDAL()
         {
-            string s = @"Data Source=LAPTOP-SF87IO3T\PHAMVU;Initial Catalog=QLCHTL;Integrated Security=True";
+            string s = KetNoi.conn;
             conn = new SqlConnection(s);
         }
         public List<ChiTietHoaDonDTO> ChiTiet()

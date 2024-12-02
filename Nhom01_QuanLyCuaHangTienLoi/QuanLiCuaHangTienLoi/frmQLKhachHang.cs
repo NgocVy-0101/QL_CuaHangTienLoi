@@ -37,5 +37,52 @@ namespace QuanLiCuaHangTienLoi
         {
             LoadKH();
         }
+
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMa.Text = dgvKhachHang.SelectedRows[0].Cells[0].Value.ToString();
+            txtTen.Text = dgvKhachHang.SelectedRows[0].Cells[1].Value.ToString();
+            txtSDT.Text = dgvKhachHang.SelectedRows[0].Cells[2].Value.ToString();
+            txtDiem.Text = dgvKhachHang.SelectedRows[0].Cells[3].Value.ToString();
+        }
+
+        private void btnTaoMa_Click(object sender, EventArgs e)
+        {
+            txtMa.Text = kh.MaKH();
+        }
+
+        private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_AddNew_Click(object sender, EventArgs e)
+        {
+            KhachHangDTO k = new KhachHangDTO(txtMa.Text, txtTen.Text, txtSDT.Text, int.Parse(txtDiem.Text));
+            if (kh.ThemKhachHang(k))
+                MessageBox.Show("Thêm thành công");
+            else
+                MessageBox.Show("Thêm thất bại");
+            LoadKH();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            KhachHangDTO k = new KhachHangDTO(txtMa.Text, txtTen.Text, txtSDT.Text, int.Parse(txtDiem.Text));
+            if (kh.CapNhatKhachHang(k))
+                MessageBox.Show("Sửa thành công");
+            else
+                MessageBox.Show("Sửa thất bại");
+            LoadKH();
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            if (kh.XoaKhachHang(txtMa.Text))
+                MessageBox.Show("Xóa thành công");
+            else
+                MessageBox.Show("Xóa thất bại");
+            LoadKH();
+        }
     }
 }

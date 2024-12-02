@@ -18,7 +18,7 @@ namespace QuanLiCuaHangTienLoi_DAL
         SqlCommand cmd;
         public KhachHangDAL()
         {
-            string s = @"Data Source=LAPTOP-LDL5LP51\SQLEXPRESS;Initial Catalog=QLCHTL;Integrated Security=True";
+            string s = KetNoi.conn;
             conn = new SqlConnection(s);
         }
         public List<KhachHangDTO> KhachHang()
@@ -115,6 +115,43 @@ namespace QuanLiCuaHangTienLoi_DAL
             {
                 conn.Close();
             }
+        }
+
+        public void TichDiem(string ma, int x)
+        {
+            DataRow d = ds.Tables[0].Rows.Find(ma);
+            if(d!=null)
+            {
+                if(x==1 && int.Parse(d["Diem"].ToString()) >= 50)
+                    d["Diem"] = int.Parse(d["Diem"].ToString()) - 50;
+                else
+                    d["Diem"] = int.Parse(d["Diem"].ToString()) + 10;
+            }    
+            
+            SqlCommandBuilder c = new SqlCommandBuilder(adap);
+            adap.Update(ds.Tables[0]);
+        }
+
+        public string MaKH()
+        {
+            string ma = "";
+
+            var HD = ds.Tables[0].AsEnumerable()
+                .Where(row => row[0].ToString().StartsWith("KH"))
+                .Select(row => row[0].ToString())
+                .ToList();
+
+            int invoiceNumber = 1;
+            if (HD.Count > 0)
+            {
+                var lastInvoice = HD.Max();
+                var lastNumber = int.Parse(lastInvoice.Substring(lastInvoice.Length - 3));
+                invoiceNumber = lastNumber + 1;
+            }
+
+            ma = "KH" + invoiceNumber.ToString("D3");
+
+            return ma;
         }
     }
 }

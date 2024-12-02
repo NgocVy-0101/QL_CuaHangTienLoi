@@ -8,6 +8,6 @@ namespace QuanLiCuaHangTienLoi_DAL
 {
     public class KetNoi
     {
-        public static string conn = @"Data Source=LAPTOP-SF87IO3T\PHAMVU;Initial Catalog=QLCHTL;Integrated Security=True";
+        public static string conn = @"Data Source=LAPTOP-SF87IO3T\VU957;Initial Catalog=QLCHTL;User ID=sa;Password=123";
     }
 }

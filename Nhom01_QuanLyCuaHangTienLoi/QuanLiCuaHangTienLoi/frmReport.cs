@@ -11,6 +11,14 @@ namespace QuanLiCuaHangTienLoi
         {
             InitializeComponent();
         }
+        public frmReport(string ma, string gg)
+        {
+            InitializeComponent();
+            s = ma;
+            g = float.Parse(gg);
+        }
+        string s;
+        float g;
 
         public void LoadReport(string reportPath, DataTable data)
         {
@@ -21,7 +29,30 @@ namespace QuanLiCuaHangTienLoi
                 reportDocument.SetDataSource(data);
 
                 // Thiết lập thông tin đăng nhập cho cơ sở dữ liệu (nếu cần)
-                reportDocument.SetDatabaseLogon("sa", "010104");
+                reportDocument.SetDatabaseLogon("sa", "123");
+                //reportDocument.SetParameterValue("GiamGia", s);
+
+                crystalReportViewer1.ReportSource = reportDocument;
+                crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra khi tải báo cáo: " + ex.Message + "\n" + ex.StackTrace);
+            }
+        }
+
+        public void LoadReport2(string reportPath)
+        {
+            try
+            {
+                ReportDocument reportDocument = new ReportDocument();
+                reportDocument.Load(reportPath);
+                //reportDocument.Refresh();
+
+                reportDocument.SetDatabaseLogon("sa", "123");
+                reportDocument.SetParameterValue("MaHoaDon", s);
+                reportDocument.SetParameterValue("GiamGia", g);
+
 
                 crystalReportViewer1.ReportSource = reportDocument;
                 crystalReportViewer1.Refresh();

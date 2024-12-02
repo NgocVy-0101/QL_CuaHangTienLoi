@@ -8,7 +8,7 @@ namespace QuanLiCuaHangTienLoi_DTO
 {
     public class SanPhamDTO
     {
-        string maSanPham, tenSanPham, hinhAnh, maLoaiSanPham, maNCC, ghiChu;
+        string maSanPham, tenSanPham, maLoaiSanPham, maNCC, ghiChu;
         DateTime ngaySanXuat, ngayHetHan;
         string xuatXu;
 
@@ -56,9 +56,6 @@ namespace QuanLiCuaHangTienLoi_DTO
             set { maLoaiSanPham = value; }
         }
 
-
-
-
         public DateTime NgaySanXuat 
         {
             get { return ngaySanXuat; }
@@ -80,21 +77,15 @@ namespace QuanLiCuaHangTienLoi_DTO
             get { return ghiChu; }
             set { ghiChu = value; }
         }
-        public string HinhAnh
-        {
-            get { return hinhAnh; }
-            set { hinhAnh = value; }
-        }
 
 
-        public SanPhamDTO(string ma, string ten, int sl, float gn, float gb, string hi, DateTime nsx, DateTime nhh, string xx, string maloai, string mncc, string ghi)
+        public SanPhamDTO(string ma, string ten, int sl, float gn, float gb,  DateTime nsx, DateTime nhh, string xx, string maloai, string mncc, string ghi)
         {
             MaSanPham = ma;
             TenSanPham = ten;
             SoLuongCon = sl;
             GiaNhap = gn;
             GiaBan = gb;
-            HinhAnh = hi;
             MaLoaiSanPham = maloai;
             MaNCC = mncc;
             GhiChu = ghi;

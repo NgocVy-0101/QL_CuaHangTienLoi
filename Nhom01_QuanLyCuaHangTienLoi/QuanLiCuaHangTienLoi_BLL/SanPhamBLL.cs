@@ -27,5 +27,14 @@ namespace QuanLiCuaHangTienLoi_BLL
         {
             return sp.Xoa(s);
         }
+        public void CapNhatSoLuong(string ma, int sl)
+        {
+            sp.CapNhatSoLuong(ma, sl);
+        }
+
+        public string MaSP()
+        {
+            return sp.MaSP();
+        }    
     }
 }

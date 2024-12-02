@@ -19,10 +19,19 @@ namespace QuanLiCuaHangTienLoi
         List<ChiTietHoaDonDTO> lct = new List<ChiTietHoaDonDTO>();
         List<ChiTietHoaDonDTO> dsct = new List<ChiTietHoaDonDTO>();
         HoaDonDTO hdto;
+        KhachHangBLL kh = new KhachHangBLL();
+        List<KhachHangDTO> lkh = new List<KhachHangDTO>();
+        NhanVienDTO nvien;
 
         public frmTaoHoaDon()
         {
             InitializeComponent();
+        }
+
+        public frmTaoHoaDon(NhanVienDTO nv)
+        {
+            InitializeComponent();
+            nvien = nv;
         }
 
         private void textBox11_TextChanged(object sender, EventArgs e)
@@ -40,17 +49,40 @@ namespace QuanLiCuaHangTienLoi
         private void button1_Click(object sender, EventArgs e)
         {
             txtMa.Text = hd.MaHoaDon();
+            groupChiTiet.Enabled = true;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            float thanhTienTong = lct.Sum(x => x.ThanhTien); 
-            hdto = new HoaDonDTO(txtMa.Text, "NV0029", "KHTT0012245", 0, dateNhap.Value, thanhTienTong);
+            float thanhTienTong = lct.Sum(x => x.ThanhTien) - float.Parse(txtGiamGia.Text); 
+            hdto = new HoaDonDTO(txtMa.Text, "NV001", txtMaKH.Text, float.Parse(txtGiamGia.Text), dateNhap.Value, thanhTienTong);
             hd.Them(hdto);
             foreach (ChiTietHoaDonDTO i in lct)
             {
                 ct.Them(i);
+                sp.CapNhatSoLuong(i.MaSanPham, i.SoLuong);
             }
+            if(ckbGiamGia.Checked)
+                kh.TichDiem(txtMaKH.Text,1);
+            else
+                kh.TichDiem(txtMaKH.Text, 0);
+
+
+            MessageBox.Show("Thêm hóa đơn thành công");
+            // Hiển thị hộp thoại Yes/No
+            DialogResult result = MessageBox.Show(
+                "Bạn có muốn in hóa đơn?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                btnIn_Click(sender, e);
+            }
+            button1_Click(sender, e);
+            Loadfrm();
         }
 
         public void Loadfrm()
@@ -62,13 +94,13 @@ namespace QuanLiCuaHangTienLoi
             cboNCC.DisplayMember = "TenNCC";
 
             List<SanPhamDTO> ds2 = sp.SanPham();
+            dgvSanPham.DataSource = null;
             dgvSanPham.DataSource = ds2;
             dgvSanPham.Columns["MaSanPham"].HeaderText = "Mã sản phẩm";
             dgvSanPham.Columns["TenSanPham"].HeaderText = "Tên sản phẩm";
             dgvSanPham.Columns["SoLuongCon"].HeaderText = "Số lượng còn";
             dgvSanPham.Columns["GiaNhap"].Visible = false;
             dgvSanPham.Columns["GiaBan"].HeaderText = "Giá bán";
-            dgvSanPham.Columns["HinhAnh"].Visible = false;
             dgvSanPham.Columns["MaLoaiSanPham"].Visible = false;
             dgvSanPham.Columns["MaNCC"].Visible = false;
             dgvSanPham.Columns["GhiChu"].Visible = false;
@@ -77,12 +109,25 @@ namespace QuanLiCuaHangTienLoi
             dgvSanPham.Columns["XuatXu"].Visible = false;
 
             dsct = ct.ChiTiet();
+            dgvChiTiet.DataSource = null;
             dgvChiTiet.DataSource = dsct;
+
+
         }
 
         private void frmTaoHoaDon_Load(object sender, EventArgs e)
         {
             Loadfrm();
+            lblNV.Text += nvien.TenNhanVien;
+            lkh = kh.KhachHang();
+            cboKH.DataSource = null;
+            cboKH.DataSource = lkh;
+            cboKH.DisplayMember = "TenKhach";
+            cboKH.ValueMember = "MaKhach";
+            cboKH.SelectedIndex = 0;
+            txtMaKH.Text = cboKH.SelectedValue.ToString();
+            txtGiamGia.Text = "0";
+
         }
 
         private void cboSP_SelectedIndexChanged(object sender, EventArgs e)
@@ -106,7 +151,7 @@ namespace QuanLiCuaHangTienLoi
                 if (int.TryParse(txtSL.Text, out soLuong))
                 {
                     float donGia = float.Parse(s3);
-                    float tt = soLuong * donGia;
+                    float tt = soLuong * donGia - float.Parse(txtGiamGia.Text);
                     txtThanhTien.Text = tt.ToString();
                 }
                 else
@@ -114,13 +159,32 @@ namespace QuanLiCuaHangTienLoi
                     MessageBox.Show("Số lượng phải là một số hợp lệ.");
                 }
             }
+
+            ckbGiamGia_CheckedChanged(sender, e);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if(txtMaSP.Text=="")
+            {
+                MessageBox.Show("Bạn chưa chọn sản phẩm");
+                return;
+            }    
+            var xoa = lct.FirstOrDefault(t => t.MaSanPham == txtMaSP.Text && t.MaHoaDon == txtMa.Text);
+            if(xoa!=null)
+            {
+                MessageBox.Show("Hóa đơn này đã tồn tại sản phẩm này");
+                return;
+            }   
+
             int soLuong;
             if (int.TryParse(txtSL.Text, out soLuong))
             {
+                if(soLuong>int.Parse(dgvSanPham.SelectedRows[0].Cells["SoLuongCon"].Value.ToString()))
+                {
+                    MessageBox.Show("Số lượng sản phẩm không đủ cho hóa đơn này");
+                    return;
+                }    
                 float donGia = float.Parse(txtDonGia.Text);
                 float tt = soLuong * donGia;
 
@@ -132,7 +196,7 @@ namespace QuanLiCuaHangTienLoi
                 dgvChiTiet.DataSource = dsct;
 
                 // Tính tổng thành tiền và cập nhật ô txtThanhTien
-                float thanhTienTong = lct.Sum(x => x.ThanhTien);
+                float thanhTienTong = lct.Sum(x => x.ThanhTien) - float.Parse(txtGiamGia.Text);
                 txtThanhTien.Text = thanhTienTong.ToString();
             }
             else
@@ -149,7 +213,7 @@ namespace QuanLiCuaHangTienLoi
                 return;
             }
 
-            var xoa = lct.FirstOrDefault(t => t.MaSanPham == txtMaSP.Text && t.MaHoaDon == txtMa.Text);
+            var xoa = lct.FirstOrDefault(t => t.MaSanPham == dgvChiTiet.SelectedRows[0].Cells[1].Value.ToString() && t.MaHoaDon == dgvChiTiet.SelectedRows[0].Cells[0].Value.ToString());
             if (xoa != null)
             {
                 lct.Remove(xoa);
@@ -159,12 +223,12 @@ namespace QuanLiCuaHangTienLoi
                 dgvChiTiet.DataSource = dsct;
 
                 // Tính tổng thành tiền và cập nhật ô txtThanhTien
-                float thanhTienTong = lct.Sum(x => x.ThanhTien);
+                float thanhTienTong = lct.Sum(x => x.ThanhTien) - float.Parse(txtGiamGia.Text);
                 txtThanhTien.Text = thanhTienTong.ToString();
             }
             else
             {
-                MessageBox.Show("Không tìm thấy sản phẩm với mã sản phẩm và mã hóa đơn này.");
+                MessageBox.Show("Không thể xóa sản phẩm từ hóa đơn khác");
             }
         }
 
@@ -172,51 +236,45 @@ namespace QuanLiCuaHangTienLoi
         {
             try
             {
-                // Kiểm tra danh sách chi tiết hóa đơn
-                if (lct == null || lct.Count == 0)
-                {
-                    MessageBox.Show("Danh sách chi tiết hóa đơn rỗng.");
-                    return;
-                }
-
-                // Tạo DataTable từ danh sách chi tiết hóa đơn
-                DataTable dtSelectedProducts = new DataTable();
-                dtSelectedProducts.Columns.Add("MaHoaDon");
-                dtSelectedProducts.Columns.Add("MaSanPham");
-                dtSelectedProducts.Columns.Add("SoLuong");
-                dtSelectedProducts.Columns.Add("ThanhTien");
-
-                foreach (var item in lct)
-                {
-                    DataRow row = dtSelectedProducts.NewRow();
-                    row["MaHoaDon"] = item.MaHoaDon;
-                    row["MaSanPham"] = item.MaSanPham;
-                    row["SoLuong"] = item.SoLuong;
-                    row["ThanhTien"] = item.ThanhTien;
-                    dtSelectedProducts.Rows.Add(row);
-                }
-
-                // Đường dẫn tới file .rpt 
-                string reportPath = @"D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\CongNgheNet-main(1)\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\crystalReportViewer.rpt";
-
-                ReportDocument reportDocument = new ReportDocument();
-                reportDocument.Load(reportPath);
-
-                
-                reportDocument.SetDataSource(dtSelectedProducts);
-
-                
-                reportDocument.SetDatabaseLogon("sa", "010104");
+                //// Đường dẫn tới file .rpt 
+                string reportPath = @"D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\crystalReportViewer.rpt";
 
                 // Hiển thị báo cáo
-                frmReport reportForm = new frmReport();
-                reportForm.LoadReport(reportPath, dtSelectedProducts);
+                frmReport reportForm = new frmReport(txtMa.Text,txtGiamGia.Text);
+                reportForm.LoadReport2(reportPath);
                 reportForm.Show();
+
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi xảy ra khi in hóa đơn: " + ex.Message + "\n" + ex.StackTrace);
             }
         }
+
+        private void ckbGiamGia_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ckbGiamGia.Checked==true)
+            {
+                float dg = float.Parse(txtThanhTien.Text);
+                float gg = hd.GiamGia(txtMaKH.Text);
+                txtGiamGia.Text = (gg * dg).ToString();
+            }    
+            else
+            {
+                txtGiamGia.Text = "0";
+            }    
+        }
+
+        private void cboKH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtMaKH.Text = cboKH.SelectedValue.ToString();
+        }
+
+        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }

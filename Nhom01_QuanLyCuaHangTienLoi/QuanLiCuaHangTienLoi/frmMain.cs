@@ -19,6 +19,12 @@ namespace QuanLiCuaHangTienLoi
         {
             InitializeComponent();
         }
+        NhanVienDTO nvien;
+        public frmMain(NhanVienDTO nv)
+        {
+            InitializeComponent();
+            nvien = nv;
+        }
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {
@@ -45,11 +51,18 @@ namespace QuanLiCuaHangTienLoi
         private void frmMain_Load(object sender, EventArgs e)
         {
             LoadSP();
+            if(nvien.Quyen=="NhanVien")
+            {
+                btnLoaiSP.Enabled = false;
+                btnNCC.Enabled = false;
+                btnThongKe.Enabled = false;
+                btnNhanVien.Enabled = false;
+            }    
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            frmQLHoaDon frmHD = new frmQLHoaDon();
+            frmTaoHoaDon frmHD = new frmTaoHoaDon(nvien);
             frmHD.Show();
         }
 

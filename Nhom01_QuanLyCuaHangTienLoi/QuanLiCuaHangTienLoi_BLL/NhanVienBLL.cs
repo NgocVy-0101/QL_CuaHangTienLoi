@@ -32,5 +32,19 @@ namespace QuanLiCuaHangTienLoi_BLL
             NhanVienDAL dal = new NhanVienDAL();
             return dal.XoaNhanVien(maNhanVien);
         }
+
+        public bool DanNhap(string ma, string mk)
+        {
+            return dal.DangNhap(ma, mk);
+        }    
+
+        public NhanVienDTO NV(string m)
+        {
+            return dal.NV(m);
+        }    
+        public string MaNV()
+        {
+            return dal.MaNV();
+        }
     }
 }

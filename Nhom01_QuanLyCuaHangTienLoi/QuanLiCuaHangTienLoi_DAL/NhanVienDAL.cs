@@ -16,7 +16,7 @@ namespace QuanLiCuaHangTienLoi_DAL
         SqlDataAdapter adap;
         public NhanVienDAL()
         {
-            string s = @"Data Source=LAPTOP-LDL5LP51\SQLEXPRESS;Initial Catalog=QLCHTL;Integrated Security=True";
+            string s = KetNoi.conn;
             conn = new SqlConnection(s);
         }
         public List<NhanVienDTO> NhanVien()
@@ -40,7 +40,8 @@ namespace QuanLiCuaHangTienLoi_DAL
                 string dt = i["DienThoai"].ToString();
                 string dc = i["DiaChi"].ToString();
                 string mk = i["MatKhau"].ToString();
-                NhanVienDTO o = new NhanVienDTO(m,t,gt,ns,dt,dc,mk);
+                string q = i["Quyen"].ToString();
+                NhanVienDTO o = new NhanVienDTO(m,t,gt,ns,dt,dc,mk,q);
                 k.Add(o);
             }
 
@@ -89,8 +90,8 @@ namespace QuanLiCuaHangTienLoi_DAL
         {
             try
             {
-                string sql = "INSERT INTO NhanVien (MaNhanVien, TenNhanVien, GioiTinh, NgaySinh, DienThoai, DiaChi, MatKhau) " +
-                             "VALUES (@MaNhanVien, @TenNhanVien, @GioiTinh, @NgaySinh, @DienThoai, @DiaChi, @MatKhau)";
+                string sql = "INSERT INTO NhanVien (MaNhanVien, TenNhanVien, GioiTinh, NgaySinh, DienThoai, DiaChi, MatKhau, Quyen) " +
+                             "VALUES (@MaNhanVien, @TenNhanVien, @GioiTinh, @NgaySinh, @DienThoai, @DiaChi, @MatKhau, @Quyen)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -102,6 +103,7 @@ namespace QuanLiCuaHangTienLoi_DAL
                 cmd.Parameters.AddWithValue("@DienThoai", nvDTO.DienThoai);
                 cmd.Parameters.AddWithValue("@DiaChi", nvDTO.DiaChi);
                 cmd.Parameters.AddWithValue("@MatKhau", nvDTO.MatKhau);  // Mật khẩu mặc định
+                cmd.Parameters.AddWithValue("@Quyen", nvDTO.Quyen);
 
                 conn.Open();
                 int rowsAffected = cmd.ExecuteNonQuery(); // Thực thi câu lệnh SQL
@@ -129,7 +131,7 @@ namespace QuanLiCuaHangTienLoi_DAL
             {
                 string sql = "UPDATE NhanVien SET " +
                              "TenNhanVien = @TenNhanVien, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, " +
-                             "DienThoai = @DienThoai, DiaChi = @DiaChi, MatKhau = @MatKhau " +
+                             "DienThoai = @DienThoai, DiaChi = @DiaChi, MatKhau = @MatKhau, Quyen = @Quyen " +
                              "WHERE MaNhanVien = @MaNhanVien";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -142,6 +144,7 @@ namespace QuanLiCuaHangTienLoi_DAL
                 cmd.Parameters.AddWithValue("@DienThoai", nvDTO.DienThoai);
                 cmd.Parameters.AddWithValue("@DiaChi", nvDTO.DiaChi);
                 cmd.Parameters.AddWithValue("@MatKhau", nvDTO.MatKhau);  // Mật khẩu có thể thay đổi khi cập nhật
+                cmd.Parameters.AddWithValue("@Quyen", nvDTO.Quyen);
 
                 conn.Open();
                 int rowsAffected = cmd.ExecuteNonQuery(); // Thực thi câu lệnh SQL
@@ -193,5 +196,41 @@ namespace QuanLiCuaHangTienLoi_DAL
             }
         }
 
+        public NhanVienDTO NV(string nv)
+        {
+            DataRow i = ds.Tables[0].Rows.Find(nv);
+            string m = i["MaNhanVien"].ToString();
+            string t = i["TenNhanVien"].ToString();
+            string gt = i["GioiTinh"].ToString();
+            DateTime ns = (DateTime)i["NgaySinh"];
+            string dt = i["DienThoai"].ToString();
+            string dc = i["DiaChi"].ToString();
+            string mk = i["MatKhau"].ToString();
+            string q = i["Quyen"].ToString();
+            NhanVienDTO o = new NhanVienDTO(m, t, gt, ns, dt, dc, mk, q);
+            return o;
+        }
+
+        public string MaNV()
+        {
+            string ma = "";
+
+            var HD = ds.Tables[0].AsEnumerable()
+                .Where(row => row[0].ToString().StartsWith("NV"))
+                .Select(row => row[0].ToString())
+                .ToList();
+
+            int invoiceNumber = 1;
+            if (HD.Count > 0)
+            {
+                var lastInvoice = HD.Max();
+                var lastNumber = int.Parse(lastInvoice.Substring(lastInvoice.Length - 3));
+                invoiceNumber = lastNumber + 1;
+            }
+
+            ma = "NV" + invoiceNumber.ToString("D3");
+
+            return ma;
+        }
     }
 }

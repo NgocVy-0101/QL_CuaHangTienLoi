@@ -27,5 +27,9 @@ namespace QuanLiCuaHangTienLoi_BLL
         {
             return ncc.Xoa(sp);
         }
+        public string MaNCC()
+        {
+            return ncc.MaNCC();
+        }    
     }
 }
