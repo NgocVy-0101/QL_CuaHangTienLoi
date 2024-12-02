@@ -39,7 +39,12 @@ namespace QuanLiCuaHangTienLoi
             dgvHoaDon.Columns["MaHoaDon"].HeaderText = "Mã hóa đơn";
             dgvHoaDon.Columns["MaNhanVien"].HeaderText = "Mã nhân viên";
             dgvHoaDon.Columns["MaKhach"].HeaderText = "Mã khách hàng";
-            dgvHoaDon.Columns["MaSanPham"].HeaderText = "Mã sản phẩm";
+
+            if (dgvHoaDon.Columns["MaSanPham"] != null)
+            {
+                dgvHoaDon.Columns["MaSanPham"].HeaderText = "Mã sản phẩm";
+            }
+
             dgvHoaDon.Columns["SoLuong"].HeaderText = "Số lượng";
             dgvHoaDon.Columns["NgayBan"].HeaderText = "Ngày bán";
             dgvHoaDon.Columns["ThanhTien"].HeaderText = "Thành tiền";

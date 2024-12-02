@@ -37,15 +37,5 @@ namespace QuanLiCuaHangTienLoi
         {
             LoadKH();
         }
-
-        private void btn_Save_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_AddNew_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

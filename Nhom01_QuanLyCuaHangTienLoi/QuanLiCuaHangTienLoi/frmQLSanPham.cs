@@ -15,8 +15,6 @@ namespace QuanLiCuaHangTienLoi
     public partial class frmQLSanPham : Form
     {
         SanPhamBLL sp = new SanPhamBLL();
-        NhaCungCapBLL ncc = new NhaCungCapBLL();
-        LoaiSanPhamBLL lsp = new LoaiSanPhamBLL();
         public frmQLSanPham()
         {
             InitializeComponent();
@@ -31,7 +29,6 @@ namespace QuanLiCuaHangTienLoi
         {
             List<SanPhamDTO> ds = new List<SanPhamDTO>();
             ds = sp.SanPham();
-            dgvSanPham.DataSource = null;
             dgvSanPham.DataSource = ds;
             // Đổi tên các cột theo ý muốn sau khi đã gán dữ liệu
             dgvSanPham.Columns["MaSanPham"].HeaderText = "Mã sản phẩm";
@@ -46,19 +43,6 @@ namespace QuanLiCuaHangTienLoi
             dgvSanPham.Columns["NgaySanXuat"].HeaderText = "Ngày sản xuất";
             dgvSanPham.Columns["NgayHetHan"].HeaderText = "Hạn sử dụng";
             dgvSanPham.Columns["XuatXu"].HeaderText = "Xuất xứ";
-
-
-            List<LoaiSanPhamDTO> Llsp = lsp.LoaiSP();
-            cboLSP.DataSource = null;
-            cboLSP.DataSource = Llsp;
-            cboLSP.DisplayMember = "TenLoaiSanPham";
-            cboLSP.ValueMember = "MaLoaiSanPham";
-
-            List<NhaCungCapDTO> lncc = ncc.NhaCungCap();
-            cboNCC.DataSource = null;
-            cboNCC.DataSource = lncc;
-            cboNCC.DisplayMember = "TenNCC";
-            cboNCC.ValueMember = "MaNCC";
         }
 
         private void frmQLSanPham_Load(object sender, EventArgs e)
@@ -73,46 +57,7 @@ namespace QuanLiCuaHangTienLoi
 
         private void btn_Addnew_Click(object sender, EventArgs e)
         {
-            SanPhamDTO s1 = new SanPhamDTO(txtMa.Text, txtTen.Text, int.Parse(txtSL.Text), float.Parse(txtGiaNhap.Text), float.Parse(txtGiaBan.Text), null, dateSX.Value, dateHan.Value, txtXX.Text, cboLSP.SelectedValue.ToString(), cboNCC.SelectedValue.ToString(), txtGhiChu.Text);
-            if (sp.Them(s1))
-                MessageBox.Show("Them thanh cong");
-            else
-                MessageBox.Show("Xay ra lõi");
-            LoadSP();
-        }
 
-        private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtMa.Text = dgvSanPham.SelectedRows[0].Cells[0].Value.ToString();
-            txtTen.Text = dgvSanPham.SelectedRows[0].Cells[1].Value.ToString();
-            cboNCC.SelectedValue= dgvSanPham.SelectedRows[0].Cells[5].Value.ToString();
-            cboLSP.SelectedValue = dgvSanPham.SelectedRows[0].Cells[6].Value.ToString();
-            txtSL.Text = dgvSanPham.SelectedRows[0].Cells[2].Value.ToString();
-            txtGiaBan.Text = dgvSanPham.SelectedRows[0].Cells[3].Value.ToString();
-            txtGiaNhap.Text = dgvSanPham.SelectedRows[0].Cells[4].Value.ToString();
-            dateSX.Value = Convert.ToDateTime(dgvSanPham.SelectedRows[0].Cells[7].Value);
-            dateHan.Value = Convert.ToDateTime(dgvSanPham.SelectedRows[0].Cells[8].Value);
-            txtXX.Text = dgvSanPham.SelectedRows[0].Cells[9].Value.ToString();
-            txtGhiChu.Text = dgvSanPham.SelectedRows[0].Cells[10].Value.ToString();
-
-        }
-
-        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btn_ViewwData_Click(object sender, EventArgs e)
-        {
-            txtMa.Clear();
-            txtTen.Clear();
-            txtSL.Clear();
-            txtGiaNhap.Clear();
-            txtGiaBan.Clear();
-            txtGhiChu.Clear();
-            txtXX.Clear();
-            
-            LoadSP();
         }
     }
 }
