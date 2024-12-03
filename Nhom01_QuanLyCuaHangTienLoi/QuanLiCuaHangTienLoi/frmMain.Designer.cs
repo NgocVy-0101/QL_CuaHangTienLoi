@@ -31,6 +31,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvTop10 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThongKe = new System.Windows.Forms.Button();
             this.btnNCC = new System.Windows.Forms.Button();
             this.btnKhach = new System.Windows.Forms.Button();
             this.btnLoaiSP = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnThongKe = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTop10)).BeginInit();
             this.panel1.SuspendLayout();
@@ -56,6 +56,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Honeydew;
             this.groupBox2.Controls.Add(this.dgvTop10);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(657, 146);
@@ -71,12 +72,12 @@
             // 
             this.dgvTop10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTop10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTop10.Location = new System.Drawing.Point(5, 41);
+            this.dgvTop10.Location = new System.Drawing.Point(6, 27);
             this.dgvTop10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTop10.Name = "dgvTop10";
             this.dgvTop10.RowHeadersWidth = 51;
             this.dgvTop10.RowTemplate.Height = 24;
-            this.dgvTop10.Size = new System.Drawing.Size(736, 418);
+            this.dgvTop10.Size = new System.Drawing.Size(736, 428);
             this.dgvTop10.TabIndex = 5;
             // 
             // panel1
@@ -94,13 +95,25 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(221, 758);
+            this.panel1.Size = new System.Drawing.Size(221, 727);
             this.panel1.TabIndex = 24;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnThongKe.Location = new System.Drawing.Point(20, 646);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(187, 46);
+            this.btnThongKe.TabIndex = 38;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
             // btnNCC
             // 
-            this.btnNCC.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnNCC.BackColor = System.Drawing.Color.Gold;
             this.btnNCC.Location = new System.Drawing.Point(20, 567);
             this.btnNCC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNCC.Name = "btnNCC";
@@ -112,7 +125,7 @@
             // 
             // btnKhach
             // 
-            this.btnKhach.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnKhach.BackColor = System.Drawing.Color.LightYellow;
             this.btnKhach.Location = new System.Drawing.Point(20, 251);
             this.btnKhach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnKhach.Name = "btnKhach";
@@ -124,7 +137,7 @@
             // 
             // btnLoaiSP
             // 
-            this.btnLoaiSP.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnLoaiSP.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnLoaiSP.Location = new System.Drawing.Point(20, 409);
             this.btnLoaiSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoaiSP.Name = "btnLoaiSP";
@@ -136,7 +149,7 @@
             // 
             // btnSanPham
             // 
-            this.btnSanPham.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSanPham.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.btnSanPham.Location = new System.Drawing.Point(20, 330);
             this.btnSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSanPham.Name = "btnSanPham";
@@ -148,7 +161,7 @@
             // 
             // btnNhanVien
             // 
-            this.btnNhanVien.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnNhanVien.BackColor = System.Drawing.Color.Khaki;
             this.btnNhanVien.Location = new System.Drawing.Point(20, 488);
             this.btnNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNhanVien.Name = "btnNhanVien";
@@ -160,7 +173,7 @@
             // 
             // btnHoaDon
             // 
-            this.btnHoaDon.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnHoaDon.BackColor = System.Drawing.Color.Ivory;
             this.btnHoaDon.Location = new System.Drawing.Point(20, 172);
             this.btnHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHoaDon.Name = "btnHoaDon";
@@ -183,6 +196,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.MintCream;
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.textBox6);
@@ -274,6 +288,7 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "Làm mới";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
@@ -281,32 +296,24 @@
             this.label8.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(263, 39);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(428, 34);
+            this.label8.Size = new System.Drawing.Size(384, 34);
             this.label8.TabIndex = 28;
-            this.label8.Text = "Siêu thị mini - Cửa hàng tạp hóa";
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnThongKe.Location = new System.Drawing.Point(20, 646);
-            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(187, 46);
-            this.btnThongKe.TabIndex = 38;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.label8.Text = "Cửa Hàng Tiện Lợi NHÓM 1";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1437, 758);
+            this.BackgroundImage = global::QuanLiCuaHangTienLoi.Properties.Resources.hinh2;
+            this.ClientSize = new System.Drawing.Size(1425, 727);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
+            this.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
             this.Text = "Form8";

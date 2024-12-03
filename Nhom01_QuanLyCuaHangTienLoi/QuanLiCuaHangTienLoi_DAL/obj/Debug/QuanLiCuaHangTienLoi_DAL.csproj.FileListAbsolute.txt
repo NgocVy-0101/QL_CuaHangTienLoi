@@ -16,3 +16,12 @@ D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHan
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.CopyComplete
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.dll
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.pdb
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\bin\Debug\QuanLiCuaHangTienLoi_DAL.dll
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\bin\Debug\QuanLiCuaHangTienLoi_DAL.pdb
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\bin\Debug\QuanLiCuaHangTienLoi_DTO.dll
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\bin\Debug\QuanLiCuaHangTienLoi_DTO.pdb
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.AssemblyReference.cache
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.CoreCompileInputs.cache
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.csproj.CopyComplete
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.dll
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DAL\obj\Debug\QuanLiCuaHangTienLoi_DAL.pdb

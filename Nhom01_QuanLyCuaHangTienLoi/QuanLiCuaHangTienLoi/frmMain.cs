@@ -95,5 +95,21 @@ namespace QuanLiCuaHangTienLoi
             frmQLNhaCungCap frmNCC = new frmQLNhaCungCap();
             frmNCC.Show();
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            frmThongKe frmNCC = new frmThongKe();
+            frmNCC.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -51,5 +51,10 @@ namespace QuanLiCuaHangTienLoi
         {
             List<NhanVienDTO> n = nv.NhanVien();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

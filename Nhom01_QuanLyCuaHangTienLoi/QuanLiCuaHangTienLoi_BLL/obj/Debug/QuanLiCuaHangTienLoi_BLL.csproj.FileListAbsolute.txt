@@ -20,3 +20,14 @@ D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHan
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.csproj.CopyComplete
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.dll
 D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.pdb
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_BLL.dll
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_BLL.pdb
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_DAL.dll
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_DTO.dll
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_DAL.pdb
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_DTO.pdb
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.csproj.AssemblyReference.cache
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.csproj.CoreCompileInputs.cache
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.csproj.CopyComplete
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.dll
+D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.pdb
