@@ -19,5 +19,9 @@ namespace QuanLiCuaHangTienLoi_BLL
         {
             ct.Them(c);
         }
+        public int SoLuongSanPhamDaban()
+        {
+            return ct.SoLuongSanPhamDaban();
+        }
     }
 }

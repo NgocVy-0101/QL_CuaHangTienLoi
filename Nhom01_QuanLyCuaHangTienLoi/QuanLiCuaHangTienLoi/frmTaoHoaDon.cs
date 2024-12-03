@@ -54,7 +54,7 @@ namespace QuanLiCuaHangTienLoi
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            float thanhTienTong = lct.Sum(x => x.ThanhTien) - float.Parse(txtGiamGia.Text); 
+            float thanhTienTong = lct.Sum(x => x.ThanhTien) - float.Parse(txtGiamGia.Text);
             hdto = new HoaDonDTO(txtMa.Text, "NV001", txtMaKH.Text, float.Parse(txtGiamGia.Text), dateNhap.Value, thanhTienTong);
             hd.Them(hdto);
             foreach (ChiTietHoaDonDTO i in lct)
@@ -62,8 +62,8 @@ namespace QuanLiCuaHangTienLoi
                 ct.Them(i);
                 sp.CapNhatSoLuong(i.MaSanPham, i.SoLuong);
             }
-            if(ckbGiamGia.Checked)
-                kh.TichDiem(txtMaKH.Text,1);
+            if (ckbGiamGia.Checked)
+                kh.TichDiem(txtMaKH.Text, 1);
             else
                 kh.TichDiem(txtMaKH.Text, 0);
 
@@ -79,7 +79,19 @@ namespace QuanLiCuaHangTienLoi
 
             if (result == DialogResult.Yes)
             {
-                btnIn_Click(sender, e);
+                try
+                {
+                    //// Đường dẫn tới file .rpt 
+                    string reportPath = @"D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\crystalReportViewer.rpt";
+                    //// Hiển thị báo cáo
+                    frmReport reportForm = new frmReport(txtMa.Text);
+                    reportForm.LoadReport2(reportPath);
+                    reportForm.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi xảy ra khi in hóa đơn: " + ex.Message + "\n" + ex.StackTrace);
+                }
             }
             button1_Click(sender, e);
             Loadfrm();
@@ -151,8 +163,8 @@ namespace QuanLiCuaHangTienLoi
                 if (int.TryParse(txtSL.Text, out soLuong))
                 {
                     float donGia = float.Parse(s3);
-                    float tt = soLuong * donGia - float.Parse(txtGiamGia.Text);
-                    txtThanhTien.Text = tt.ToString();
+                    float tt = soLuong * donGia;
+                    txtThanhT.Text = tt.ToString();
                 }
                 else
                 {
@@ -165,26 +177,26 @@ namespace QuanLiCuaHangTienLoi
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(txtMaSP.Text=="")
+            if (txtMaSP.Text == "")
             {
                 MessageBox.Show("Bạn chưa chọn sản phẩm");
                 return;
-            }    
+            }
             var xoa = lct.FirstOrDefault(t => t.MaSanPham == txtMaSP.Text && t.MaHoaDon == txtMa.Text);
-            if(xoa!=null)
+            if (xoa != null)
             {
                 MessageBox.Show("Hóa đơn này đã tồn tại sản phẩm này");
                 return;
-            }   
+            }
 
             int soLuong;
             if (int.TryParse(txtSL.Text, out soLuong))
             {
-                if(soLuong>int.Parse(dgvSanPham.SelectedRows[0].Cells["SoLuongCon"].Value.ToString()))
+                if (soLuong > int.Parse(dgvSanPham.SelectedRows[0].Cells["SoLuongCon"].Value.ToString()))
                 {
                     MessageBox.Show("Số lượng sản phẩm không đủ cho hóa đơn này");
                     return;
-                }    
+                }
                 float donGia = float.Parse(txtDonGia.Text);
                 float tt = soLuong * donGia;
 
@@ -195,9 +207,7 @@ namespace QuanLiCuaHangTienLoi
                 dgvChiTiet.DataSource = null;
                 dgvChiTiet.DataSource = dsct;
 
-                // Tính tổng thành tiền và cập nhật ô txtThanhTien
-                float thanhTienTong = lct.Sum(x => x.ThanhTien) - float.Parse(txtGiamGia.Text);
-                txtThanhTien.Text = thanhTienTong.ToString();
+                ckbGiamGia_CheckedChanged(sender, e);
             }
             else
             {
@@ -222,9 +232,7 @@ namespace QuanLiCuaHangTienLoi
                 dgvChiTiet.DataSource = null;
                 dgvChiTiet.DataSource = dsct;
 
-                // Tính tổng thành tiền và cập nhật ô txtThanhTien
-                float thanhTienTong = lct.Sum(x => x.ThanhTien) - float.Parse(txtGiamGia.Text);
-                txtThanhTien.Text = thanhTienTong.ToString();
+                ckbGiamGia_CheckedChanged(sender, e);
             }
             else
             {
@@ -238,13 +246,11 @@ namespace QuanLiCuaHangTienLoi
             {
                 //// Đường dẫn tới file .rpt 
                 string reportPath = @"D:\HOCTAP\CongNgheNet\DoAn2\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi\crystalReportViewer.rpt";
-
-                // Hiển thị báo cáo
-                frmReport reportForm = new frmReport(txtMa.Text,txtGiamGia.Text);
+                string mahd = dgvChiTiet.SelectedRows[0].Cells["MaHoaDon"].Value.ToString();
+                //// Hiển thị báo cáo
+                frmReport reportForm = new frmReport(mahd);
                 reportForm.LoadReport2(reportPath);
                 reportForm.Show();
-
-                
             }
             catch (Exception ex)
             {
@@ -254,16 +260,20 @@ namespace QuanLiCuaHangTienLoi
 
         private void ckbGiamGia_CheckedChanged(object sender, EventArgs e)
         {
-            if(ckbGiamGia.Checked==true)
+            if (ckbGiamGia.Checked == true)
             {
-                float dg = float.Parse(txtThanhTien.Text);
+                float sum = lct.Where(t => t.MaHoaDon == txtMa.Text).Sum(t => t.ThanhTien);
                 float gg = hd.GiamGia(txtMaKH.Text);
-                txtGiamGia.Text = (gg * dg).ToString();
-            }    
-            else
+                float tt = sum - gg * sum;
+                txtThanhTien.Text = tt.ToString();
+                txtGiamGia.Text = (gg * tt).ToString();
+            }
+            if (ckbGiamGia.Checked == false)
             {
+                float sum = lct.Where(t => t.MaHoaDon == txtMa.Text).Sum(t => t.ThanhTien);
+                txtThanhTien.Text = sum.ToString();
                 txtGiamGia.Text = "0";
-            }    
+            }
         }
 
         private void cboKH_SelectedIndexChanged(object sender, EventArgs e)
@@ -276,5 +286,12 @@ namespace QuanLiCuaHangTienLoi
 
         }
 
+        private void txtSL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
     }
 }

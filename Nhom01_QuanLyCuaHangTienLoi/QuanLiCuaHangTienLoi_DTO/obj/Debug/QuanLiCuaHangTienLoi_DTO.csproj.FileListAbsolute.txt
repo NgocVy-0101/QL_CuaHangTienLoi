@@ -16,3 +16,9 @@ D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nh
 D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.csproj.CoreCompileInputs.cache
 D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.dll
 D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.pdb
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\bin\Debug\QuanLiCuaHangTienLoi_DTO.dll
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\bin\Debug\QuanLiCuaHangTienLoi_DTO.pdb
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.csproj.AssemblyReference.cache
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.csproj.CoreCompileInputs.cache
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.dll
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_DTO\obj\Debug\QuanLiCuaHangTienLoi_DTO.pdb

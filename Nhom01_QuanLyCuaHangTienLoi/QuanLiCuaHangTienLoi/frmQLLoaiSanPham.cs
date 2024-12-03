@@ -29,6 +29,7 @@ namespace QuanLiCuaHangTienLoi
         {
             List<LoaiSanPhamDTO> ds = new List<LoaiSanPhamDTO>();
             ds = l.LoaiSP();
+            dgvLoaiSP.DataSource = null;
             dgvLoaiSP.DataSource = ds;
             // Đổi tên các cột theo ý muốn sau khi đã gán dữ liệu
             dgvLoaiSP.Columns["MaLoaiSanPham"].HeaderText = "Mã loại sản phẩm";
@@ -53,6 +54,8 @@ namespace QuanLiCuaHangTienLoi
 
         private void btn_Addnew_Click(object sender, EventArgs e)
         {
+            if (txt_MaLoaiSanPham.Text == "" || txt_TenLoaiSanPham.Text == "")
+                return;
             LoaiSanPhamDTO ls = new LoaiSanPhamDTO(txt_MaLoaiSanPham.Text, txt_TenLoaiSanPham.Text);
             if (l.Them(ls))
                 MessageBox.Show("Thêm thành công");
@@ -63,6 +66,8 @@ namespace QuanLiCuaHangTienLoi
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (txt_MaLoaiSanPham.Text == "" || txt_TenLoaiSanPham.Text == "")
+                return;
             LoaiSanPhamDTO ls = new LoaiSanPhamDTO(txt_MaLoaiSanPham.Text, txt_TenLoaiSanPham.Text);
             if (l.Sua(ls))
                 MessageBox.Show("Sửa thành công");
@@ -73,11 +78,18 @@ namespace QuanLiCuaHangTienLoi
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            if (txt_MaLoaiSanPham.Text == "" || txt_TenLoaiSanPham.Text == "")
+                return;
             LoaiSanPhamDTO ls = new LoaiSanPhamDTO(txt_MaLoaiSanPham.Text, txt_TenLoaiSanPham.Text);
             if (l.Xoa(ls))
                 MessageBox.Show("Xóa thành công");
             else
                 MessageBox.Show("Xóa thất bại");
+            LoadLoaiSP();
+        }
+
+        private void btn_ViewwData_Click(object sender, EventArgs e)
+        {
             LoadLoaiSP();
         }
     }

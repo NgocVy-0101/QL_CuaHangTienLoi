@@ -114,7 +114,8 @@ namespace QuanLiCuaHangTienLoi_DAL
             DataRow d = ds.Tables[0].Rows.Find(ma);
             if (d != null)
             {
-                d["SoLuongCon"] = sl;
+                int cn = int.Parse(d["SoLuongCon"].ToString()) - sl;
+                d["SoLuongCon"] = cn;
             }
             SqlCommandBuilder c = new SqlCommandBuilder(adap);
             adap.Update(ds.Tables[0]);
@@ -142,5 +143,39 @@ namespace QuanLiCuaHangTienLoi_DAL
             return ma;
         }
 
+        public List<SanPhamDTO> TopSP()
+        {
+            List<SanPhamDTO> lst = new List<SanPhamDTO>();
+            string query = @"SELECT sp.*, 
+                   SUM(ct.ThanhTien) AS TongThanhTien
+            FROM ChiTietHoaDon ct
+            JOIN SanPham sp ON ct.MaSanPham = sp.MaSanPham
+            GROUP BY sp.MaSanPham, sp.TenSanPham, sp.SoLuongCon, sp.GiaNhap, sp.GiaBan, 
+                     sp.NgaySanXuat, sp.NgayHetHan, sp.XuatXu, sp.MaLoaiSanPham, 
+                     sp.MaNCC, sp.GhiChu
+            ORDER BY TongThanhTien DESC;";
+            conn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            foreach (DataRow i in dt.Rows)
+            {
+                string ma = i["MaSanPham"].ToString();
+                string ten = i["TenSanPham"].ToString();
+                int sl = (int)i["SoLuongCon"];
+                float gn = Convert.ToSingle(i["GiaNhap"]);
+                float gb = Convert.ToSingle(i["GiaBan"]);
+                string mloai = i["MaLoaiSanPham"].ToString();
+                string mncc = i["MaNCC"].ToString();
+                string gi = i["GhiChu"].ToString();
+                DateTime nsx = (DateTime)i["NgaySanXuat"];
+                DateTime nhh = (DateTime)i["NgayHetHan"];
+                string xx = i["XuatXu"].ToString();
+                SanPhamDTO o = new SanPhamDTO(ma, ten, sl, gn, gb, nsx, nhh, xx, mloai, mncc, gi);
+                lst.Add(o);
+            }
+            conn.Close();
+            return lst;
+        }
     }
 }

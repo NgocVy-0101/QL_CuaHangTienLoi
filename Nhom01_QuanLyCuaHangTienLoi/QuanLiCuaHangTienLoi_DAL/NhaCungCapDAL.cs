@@ -35,8 +35,10 @@ namespace QuanLiCuaHangTienLoi_DAL
             {
                 string m = i["MaNCC"].ToString();
                 string t = i["TenNCC"].ToString();
+                string sdt = i["SDT"].ToString();
                 string dc = i["DiaChi"].ToString();
-                NhaCungCapDTO o = new NhaCungCapDTO(m, t, dc);
+
+                NhaCungCapDTO o = new NhaCungCapDTO(m, t, sdt, dc);
                 k.Add(o);
             }
 
@@ -52,7 +54,7 @@ namespace QuanLiCuaHangTienLoi_DAL
             d[0] = sp.MaNCC;
             d[1] = sp.TenNCC;
             d[2] = sp.DiaChi;
-
+            d[3] = sp.SDT;
             ds.Tables[0].Rows.Add(d);
 
             SqlCommandBuilder c = new SqlCommandBuilder(adap);
@@ -67,6 +69,7 @@ namespace QuanLiCuaHangTienLoi_DAL
 
             d[1] = sp.TenNCC;
             d[2] = sp.DiaChi;
+            d[3] = sp.SDT;
 
             SqlCommandBuilder c = new SqlCommandBuilder(adap);
             adap.Update(ds.Tables[0]);

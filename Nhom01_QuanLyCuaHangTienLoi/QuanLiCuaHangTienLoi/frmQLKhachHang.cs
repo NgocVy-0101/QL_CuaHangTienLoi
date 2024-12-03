@@ -25,6 +25,7 @@ namespace QuanLiCuaHangTienLoi
         {
             List<KhachHangDTO> ds = new List<KhachHangDTO>();
             ds = kh.KhachHang();
+            dgvKhachHang.DataSource = null;
             dgvKhachHang.DataSource = ds;
             // Đổi tên các cột theo ý muốn sau khi đã gán dữ liệu
             dgvKhachHang.Columns["MaKhach"].HeaderText = "Mã Khách Hàng";
@@ -58,6 +59,8 @@ namespace QuanLiCuaHangTienLoi
 
         private void btn_AddNew_Click(object sender, EventArgs e)
         {
+            if (txtMa.Text == "" || txtTen.Text == "")
+                return;
             KhachHangDTO k = new KhachHangDTO(txtMa.Text, txtTen.Text, txtSDT.Text, int.Parse(txtDiem.Text));
             if (kh.ThemKhachHang(k))
                 MessageBox.Show("Thêm thành công");
@@ -68,6 +71,8 @@ namespace QuanLiCuaHangTienLoi
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (txtMa.Text == "" || txtTen.Text == "")
+                return;
             KhachHangDTO k = new KhachHangDTO(txtMa.Text, txtTen.Text, txtSDT.Text, int.Parse(txtDiem.Text));
             if (kh.CapNhatKhachHang(k))
                 MessageBox.Show("Sửa thành công");
@@ -78,10 +83,25 @@ namespace QuanLiCuaHangTienLoi
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            if (txtMa.Text == "" || txtTen.Text == "")
+                return;
             if (kh.XoaKhachHang(txtMa.Text))
                 MessageBox.Show("Xóa thành công");
             else
                 MessageBox.Show("Xóa thất bại");
+            LoadKH();
+        }
+
+        private void txtDiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
+
+        private void btn_ViewData_Click(object sender, EventArgs e)
+        {
             LoadKH();
         }
     }

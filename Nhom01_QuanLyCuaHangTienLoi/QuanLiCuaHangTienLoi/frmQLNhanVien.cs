@@ -29,6 +29,7 @@ namespace QuanLiCuaHangTienLoi
         {
             List<NhanVienDTO> ds = new List<NhanVienDTO>();
             ds = nv.NhanVien();
+            dgvNhanVien.DataSource = null;
             dgvNhanVien.DataSource = ds;
             // Đổi tên các cột theo ý muốn sau khi đã gán dữ liệu
             dgvNhanVien.Columns["MaNhanVien"].HeaderText = "Mã nhân viên";
@@ -50,6 +51,8 @@ namespace QuanLiCuaHangTienLoi
 
         private void btn_AddNew_Click(object sender, EventArgs e)
         {
+            if (txtMa.Text == "" || txtTen.Text == "" || txtDiaChi.Text == "" || txtSDT.Text == "" || txtMK.Text == "")
+                return;
             string gt;
             if (rdoNam.Checked)
                 gt = "Nam";
@@ -87,6 +90,8 @@ namespace QuanLiCuaHangTienLoi
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (txtMa.Text == "" || txtTen.Text == "" || txtDiaChi.Text == "" || txtSDT.Text == "" || txtMK.Text == "")
+                return;
             string gt;
             if (rdoNam.Checked)
                 gt = "Nam";
@@ -102,6 +107,8 @@ namespace QuanLiCuaHangTienLoi
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            if (txtMa.Text == "" || txtTen.Text == "" || txtDiaChi.Text == "" || txtSDT.Text == "" || txtMK.Text == "")
+                return;
             string gt;
             if (rdoNam.Checked)
                 gt = "Nam";
@@ -112,6 +119,19 @@ namespace QuanLiCuaHangTienLoi
                 MessageBox.Show("Xóa thành công");
             else
                 MessageBox.Show("Xóa thất bại");
+            LoadNV();
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             LoadNV();
         }
     }

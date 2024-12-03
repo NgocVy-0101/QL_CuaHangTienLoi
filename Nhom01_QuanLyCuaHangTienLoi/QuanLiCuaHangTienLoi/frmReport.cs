@@ -11,11 +11,10 @@ namespace QuanLiCuaHangTienLoi
         {
             InitializeComponent();
         }
-        public frmReport(string ma, string gg)
+        public frmReport(string ma)
         {
             InitializeComponent();
             s = ma;
-            g = float.Parse(gg);
         }
         string s;
         float g;
@@ -51,7 +50,6 @@ namespace QuanLiCuaHangTienLoi
 
                 reportDocument.SetDatabaseLogon("sa", "123");
                 reportDocument.SetParameterValue("MaHoaDon", s);
-                reportDocument.SetParameterValue("GiamGia", g);
 
 
                 crystalReportViewer1.ReportSource = reportDocument;

@@ -31,3 +31,14 @@ D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nh
 D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.csproj.CopyComplete
 D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.dll
 D:\HK1_2024\CÔNG NGHỆ. NET\ĐỒ ÁN\new\CongNgheNet-main\CongNgheNet-main\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.pdb
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_BLL.dll
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_BLL.pdb
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_DAL.dll
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_DTO.dll
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_DAL.pdb
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\bin\Debug\QuanLiCuaHangTienLoi_DTO.pdb
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.csproj.AssemblyReference.cache
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.csproj.CoreCompileInputs.cache
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.csproj.CopyComplete
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.dll
+D:\HOCTAP\CongNgheNet\thunghiem\CongNgheNet\Nhom01_QuanLyCuaHangTienLoi\QuanLiCuaHangTienLoi_BLL\obj\Debug\QuanLiCuaHangTienLoi_BLL.pdb

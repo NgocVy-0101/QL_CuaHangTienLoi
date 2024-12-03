@@ -36,7 +36,28 @@ namespace QuanLiCuaHangTienLoi
 
         private void BieuDoKhachHang()
         {
-            string query = "SELECT NgayTrongTuan, SoLuongKhachHang FROM vw_SoLuongKhachTrongTuan";
+            string query = @"SELECT 
+            CASE
+                WHEN DATEPART(WEEKDAY, NgayBan) = 2 THEN N'Thứ Hai'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 3 THEN N'Thứ Ba'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 4 THEN N'Thứ Tư'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 5 THEN N'Thứ Năm'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 6 THEN N'Thứ Sáu'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 7 THEN N'Thứ Bảy'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 1 THEN N'Chủ Nhật'
+            END AS NgayTrongTuan, --Tên ngày trong tuần bằng tiếng Việt
+            COUNT(DISTINCT MaKhach) AS SoLuongKhachHang --Số lượng khách hàng duy nhất trong ngày
+            FROM HoaDon
+            GROUP BY
+            CASE
+                WHEN DATEPART(WEEKDAY, NgayBan) = 2 THEN N'Thứ Hai'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 3 THEN N'Thứ Ba'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 4 THEN N'Thứ Tư'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 5 THEN N'Thứ Năm'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 6 THEN N'Thứ Sáu'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 7 THEN N'Thứ Bảy'
+                WHEN DATEPART(WEEKDAY, NgayBan) = 1 THEN N'Chủ Nhật'
+            END;";
 
             // Kết nối tới cơ sở dữ liệu
             using (SqlConnection connection = new SqlConnection(connectionString))

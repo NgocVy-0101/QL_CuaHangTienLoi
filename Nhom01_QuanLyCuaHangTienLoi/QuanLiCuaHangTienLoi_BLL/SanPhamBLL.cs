@@ -35,6 +35,10 @@ namespace QuanLiCuaHangTienLoi_BLL
         public string MaSP()
         {
             return sp.MaSP();
-        }    
+        }
+        public List<SanPhamDTO> TopSP()
+        {
+            return sp.TopSP();
+        }
     }
 }

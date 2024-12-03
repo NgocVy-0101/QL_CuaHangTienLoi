@@ -65,5 +65,12 @@ namespace QuanLiCuaHangTienLoi_DAL
             SqlCommandBuilder c = new SqlCommandBuilder(adap);
             adap.Update(ds.Tables[0]);
         }
+
+        public int SoLuongSanPhamDaban()
+        {
+            int sl = 0;
+            sl = ds.Tables[0].Rows.Count;
+            return sl;
+        }
     }
 }

@@ -72,6 +72,8 @@ namespace QuanLiCuaHangTienLoi
 
         private void btn_Addnew_Click(object sender, EventArgs e)
         {
+            if (txtMa.Text == "" || txtTen.Text == "" || txtGiaBan.Text == "" || txtGiaNhap.Text == "" || txtXX.Text == "" || txtSL.Text == "" || txtGhiChu.Text == "")
+                return;
             SanPhamDTO s1 = new SanPhamDTO(txtMa.Text, txtTen.Text, int.Parse(txtSL.Text), float.Parse(txtGiaNhap.Text), float.Parse(txtGiaBan.Text), dateSX.Value, dateHan.Value, txtXX.Text, cboLSP.SelectedValue.ToString(), cboNCC.SelectedValue.ToString(), txtGhiChu.Text);
             if (sp.Them(s1))
                 MessageBox.Show("Them thanh cong");
@@ -84,7 +86,7 @@ namespace QuanLiCuaHangTienLoi
         {
             txtMa.Text = dgvSanPham.SelectedRows[0].Cells[0].Value.ToString();
             txtTen.Text = dgvSanPham.SelectedRows[0].Cells[1].Value.ToString();
-            cboNCC.SelectedValue= dgvSanPham.SelectedRows[0].Cells[5].Value.ToString();
+            cboNCC.SelectedValue = dgvSanPham.SelectedRows[0].Cells[5].Value.ToString();
             cboLSP.SelectedValue = dgvSanPham.SelectedRows[0].Cells[6].Value.ToString();
             txtSL.Text = dgvSanPham.SelectedRows[0].Cells[2].Value.ToString();
             txtGiaBan.Text = dgvSanPham.SelectedRows[0].Cells[3].Value.ToString();
@@ -110,7 +112,7 @@ namespace QuanLiCuaHangTienLoi
             txtGiaBan.Clear();
             txtGhiChu.Clear();
             txtXX.Clear();
-            
+
             LoadSP();
         }
 
@@ -121,6 +123,8 @@ namespace QuanLiCuaHangTienLoi
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (txtMa.Text == "" || txtTen.Text == "" || txtGiaBan.Text == "" || txtGiaNhap.Text == "" || txtXX.Text == "" || txtSL.Text == "" || txtGhiChu.Text == "")
+                return;
             SanPhamDTO s1 = new SanPhamDTO(txtMa.Text, txtTen.Text, int.Parse(txtSL.Text), float.Parse(txtGiaNhap.Text), float.Parse(txtGiaBan.Text), dateSX.Value, dateHan.Value, txtXX.Text, cboLSP.SelectedValue.ToString(), cboNCC.SelectedValue.ToString(), txtGhiChu.Text);
             if (sp.Sua(s1))
                 MessageBox.Show("Sửa thanh cong");
@@ -131,12 +135,38 @@ namespace QuanLiCuaHangTienLoi
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            if (txtMa.Text == "" || txtTen.Text == "" || txtGiaBan.Text == "" || txtGiaNhap.Text == "" || txtXX.Text == "" || txtSL.Text == "" || txtGhiChu.Text == "")
+                return;
             SanPhamDTO s1 = new SanPhamDTO(txtMa.Text, txtTen.Text, int.Parse(txtSL.Text), float.Parse(txtGiaNhap.Text), float.Parse(txtGiaBan.Text), dateSX.Value, dateHan.Value, txtXX.Text, cboLSP.SelectedValue.ToString(), cboNCC.SelectedValue.ToString(), txtGhiChu.Text);
             if (sp.Xoa(s1))
                 MessageBox.Show("Xóa thanh cong");
             else
                 MessageBox.Show("Xóa thất bại");
             LoadSP();
+        }
+
+        private void txtSL_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
+
+        private void txtGiaNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
+
+        private void txtGiaBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
         }
     }
 }

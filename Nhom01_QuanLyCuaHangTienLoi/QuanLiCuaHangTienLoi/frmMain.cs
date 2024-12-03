@@ -15,6 +15,8 @@ namespace QuanLiCuaHangTienLoi
     public partial class frmMain : Form
     {
         SanPhamBLL sp = new SanPhamBLL();
+        HoaDonBLL hd = new HoaDonBLL();
+        ChiTietHoaDonBLL ct = new ChiTietHoaDonBLL();
         public frmMain()
         {
             InitializeComponent();
@@ -39,13 +41,34 @@ namespace QuanLiCuaHangTienLoi
         private void LoadSP()
         {
             List<SanPhamDTO> ds = new List<SanPhamDTO>();
-            ds = sp.SanPham();
-            dgvTop10.Columns.Add("Id", "Mã Sản Phẩm");
-            dgvTop10.Columns.Add("TenSanPham", "Tên Sản Phẩm");
-            foreach (SanPhamDTO item in ds)
-            {
-                dgvTop10.Rows.Add(item.MaSanPham, item.TenSanPham);
-            }    
+            ds = sp.TopSP();
+            List<HoaDonDTO> h = new List<HoaDonDTO>();
+            h = hd.HoaDon();
+            List<ChiTietHoaDonDTO> c = new List<ChiTietHoaDonDTO>();
+            c = ct.ChiTiet();
+
+            int KH = h.Count();
+            float DT = h.Sum(t => t.TongTien);
+            int SP = 0;
+            SP = c.Sum(t => t.SoLuong);
+
+            txtDT.Text = DT.ToString();
+            txtKH.Text = KH.ToString();
+            txtSP.Text = SP.ToString();
+
+            dgvTop10.DataSource = null;
+            dgvTop10.DataSource = ds;
+            dgvTop10.Columns["MaSanPham"].HeaderText = "Mã sản phẩm";
+            dgvTop10.Columns["TenSanPham"].HeaderText = "Tên sản phẩm";
+            dgvTop10.Columns["SoLuongCon"].HeaderText = "Số lượng còn";
+            dgvTop10.Columns["GiaNhap"].Visible = false;
+            dgvTop10.Columns["GiaBan"].HeaderText = "Giá bán";
+            dgvTop10.Columns["MaLoaiSanPham"].Visible = false;
+            dgvTop10.Columns["MaNCC"].Visible = false;
+            dgvTop10.Columns["GhiChu"].Visible = false;
+            dgvTop10.Columns["NgaySanXuat"].Visible = false;
+            dgvTop10.Columns["NgayHetHan"].Visible = false;
+            dgvTop10.Columns["XuatXu"].Visible = false;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -109,7 +132,7 @@ namespace QuanLiCuaHangTienLoi
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            LoadSP();
         }
     }
 }

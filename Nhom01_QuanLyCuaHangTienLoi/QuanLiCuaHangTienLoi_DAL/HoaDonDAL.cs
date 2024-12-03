@@ -110,6 +110,10 @@ namespace QuanLiCuaHangTienLoi_DAL
                 return (float)0.1;
         }
 
+        public int SoLuongKH()
+        {
+            return ds.Tables[0].Rows.Count;
+        }
 
     }
 }
