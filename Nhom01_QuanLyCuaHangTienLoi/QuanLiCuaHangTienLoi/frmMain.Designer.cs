@@ -48,6 +48,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTop10)).BeginInit();
             this.panel1.SuspendLayout();
@@ -301,6 +302,20 @@
             this.label8.Text = "Cửa Hàng Tiện Lợi NHÓM 1";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLogout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Location = new System.Drawing.Point(1279, 655);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(120, 50);
+            this.btnLogout.TabIndex = 29;
+            this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,6 +323,7 @@
             this.BackColor = System.Drawing.Color.Azure;
             this.BackgroundImage = global::QuanLiCuaHangTienLoi.Properties.Resources.hinh2;
             this.ClientSize = new System.Drawing.Size(1425, 727);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -351,5 +367,6 @@
         private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.Button btnNCC;
         private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

@@ -17,6 +17,9 @@ namespace QuanLiCuaHangTienLoi
         SanPhamBLL sp = new SanPhamBLL();
         HoaDonBLL hd = new HoaDonBLL();
         ChiTietHoaDonBLL ct = new ChiTietHoaDonBLL();
+        // Khai báo một danh sách để lưu các form con
+        List<Form> openForms = new List<Form>();
+
         public frmMain()
         {
             InitializeComponent();
@@ -87,36 +90,42 @@ namespace QuanLiCuaHangTienLoi
         {
             frmTaoHoaDon frmHD = new frmTaoHoaDon(nvien);
             frmHD.Show();
+            openForms.Add(frmHD); // Thêm form vào danh sách
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             frmQLNhanVien frmNhanVien = new frmQLNhanVien();
             frmNhanVien.Show();
+            openForms.Add(frmNhanVien); // Thêm form vào danh sách
         }
 
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             frmQLSanPham frmSanPham = new frmQLSanPham();
             frmSanPham.Show();
+            openForms.Add(frmSanPham); // Thêm form vào danh sách
         }
 
         private void btnLoaiSP_Click(object sender, EventArgs e)
         {
             frmQLLoaiSanPham frmLoai = new frmQLLoaiSanPham();
             frmLoai.Show();
+            openForms.Add(frmLoai); // Thêm form vào danh sách
         }
 
         private void btnKhach_Click(object sender, EventArgs e)
         {
             frmQLKhachHang frmKhach = new frmQLKhachHang();
             frmKhach.Show();
+            openForms.Add(frmKhach); // Thêm form vào danh sách
         }
 
         private void btnNCC_Click(object sender, EventArgs e)
         {
             frmQLNhaCungCap frmNCC = new frmQLNhaCungCap();
             frmNCC.Show();
+            openForms.Add(frmNCC); // Thêm form vào danh sách
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -128,11 +137,44 @@ namespace QuanLiCuaHangTienLoi
         {
             frmThongKe frmNCC = new frmThongKe();
             frmNCC.Show();
+            openForms.Add(frmNCC); // Thêm form vào danh sách
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             LoadSP();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Logout();
+        }
+        private void Logout()
+        {
+            // Đóng tất cả các form con đang mở
+            foreach (var form in openForms)
+            {
+                form.Close();
+            }
+
+            // Quay lại form đăng nhập (ví dụ: mở lại frmLogin)
+            frmDangNhap loginForm = new frmDangNhap();
+            loginForm.Show();
+
+            // Đóng form chính
+            this.Close();
+        }
+
+        // Hàm đóng tất cả các form con
+        private void CloseAllForms()
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f != this)  // Kiểm tra tránh đóng FormMain
+                {
+                    f.Close();  // Đóng form
+                }
+            }
         }
     }
 }
